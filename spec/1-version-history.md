@@ -6,5 +6,5 @@ Add a line to the version history table describing the major changes to the spec
 
 | Version | Authors      | Comment       |
 | ------- | ------------ | ------------- |
-| 0.1     | Dongpo       | initial input |
+| 0.1     | Dongpo Deng  | initial input |
 | 0.2     | Tarek Rashed | minor edits   |
