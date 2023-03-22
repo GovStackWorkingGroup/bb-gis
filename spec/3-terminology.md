@@ -22,3 +22,18 @@ _\<Example Terminology>_
 | **Legal Entity**               | is an organisation (public or private) ​that has the rights and obligations to define standards for personal data processing. E.g. a public health authority                                                                                                                                                                                                                                                 |
 | **Personal data**              | Is any information that (a) can be used to identify the Individual to whom such information relates, or (b) is or might be directly or indirectly linked to the Individual (ISO(IEC 29100:2011)                                                                                                                                                                                                              |
 | **Regulations**                | are broadly defined as rules followed by any system: could be laws, bylaws, ​norms or architectures (Defintion inspired by Lessig’s modalities of regulation: https://lessig.org/images/resources/1999-Code.pdf) that ​ regulates a given system.                                                                                                                                                            |
+
+1. **Geographic feature**: Geographic features are real world phenomena associated with a location relative to the Earth, about which data are collected, maintained, and disseminated. Feature catalogues defining the types of features, their operations, attributes, and associations represented in geographic data are indispensable to turning the data into usable information. Such feature catalogues promote the dissemination, sharing, and use of geographic data through providing a better understanding of the content and meaning of the data. (ISO 19110)
+2. **Coordinate**: Coordinate is one of a sequence of n numbers designating the position of a point in n-dimensional space.
+3. **Coordinate system**: A set of mathematical rules for specifying how coordinates are to be assigned to points.
+4. **Coordinate reference system**: A coordinate system that is related to an object by a datum.
+5. **Client:** Client is a software component that can invoke an operation from a server.
+6. **Operation:** An operation is a specification of a transformation or query that an object may be called to execute.
+7. **Interface**: Interface is a named set of operations that characterize the behavior of an entity.
+8. **Server and service**: Server is a particular instance of a service. A service is distinct part of the functionality that is provided by an entity through interfaces.
+9. **Service metadata**: Service metadata describes the operations and geographic information available at a server.
+10. **Request**: A request is an invocation of an operation by a client.
+11. **Response**: A response is a result of an operation returned from a server to a client.
+
+
+
