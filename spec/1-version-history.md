@@ -1,8 +1,10 @@
-# 1 Version History
+---
+description: >-
+  The version history table describes the major changes to the specifications
+  between published versions.
+---
 
-{% hint style="success" %}
-Add a line to the version history table describing the major changes to the specifications between _published_ versions. Ideally, include links to issues and authors on GitHub
-{% endhint %}
+# 1 Version History
 
 | Version | Authors      | Comment                                                                                                                       |
 | ------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------- |
