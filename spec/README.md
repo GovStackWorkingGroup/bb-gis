@@ -1,8 +1,3 @@
 # Geographic Information Services (GIS)
 
-{% hint style="success" %}
-Throughout this template are a series of these info callouts. They are designed to guide the type of content to add in each section and often contain example content from other building blocks. Delete them as no longer required.
-{% endhint %}
-
-\
-Developed by: Tarek Rashed, Dongpo Deng, Nabhonil Roy Chowdhury, `<Names and organization affiliations of working group members>` in cooperation with GIZ, ITU, DIAL, and the Government of Estonia
+Developed by: Dr. Tarek Rashed (ITU Consultant), Dr. P. S. Ramkumar (ITU), Dongpo Deng (Open Culture Foundation), Nabhonil Roy Chowdhury (eGov Foundation), Dan Henderson (Amazon AWS), Tanvir Quader (Aspire to Innovate), and Md. Sheikh Saidy (Aspire to Innovate) in cooperation with GIZ, ITU, DIAL, and the Government of Estonia.
