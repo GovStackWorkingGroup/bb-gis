@@ -43,9 +43,9 @@ The following actors have been identified as "users" of the GIS Building Block:
 * "**GIS Admin**": manages GIS data by creating, maintaining, and organizing geographic datasets and ensuring that data is accurate and up-to-date.
 * "**GIS Application Developer**": develops GIS applications by deploying one or more GIS BB services to serve business needs.
 * "**Discovery Tools**": search for metadata about spatial data to find information about the content of a dataset, the creators of a dataset, or the methods used to create a dataset.
-* "**Other Buildings Blocks and Application**": display and consume GIS services to perform specific GIS operations such as creating maps, generating reports, and more.
+* "**Other Building Blocks and Applications**": display and consume GIS services to perform specific GIS operations such as creating maps, generating reports, and more.
 
-The GIS BB services MUST enable these actors to perform basic functions and tasks associated with their role as follows:
+The GIS BB services MUST enable these actors to perform the basic functions and tasks associated with their role as follows:
 
 **2.1.1. The GIS BB MUST enable GIS Data Viewers to**
 
@@ -103,9 +103,9 @@ The GIS BB services MUST enable these actors to perform basic functions and task
 * perform geospatial analysis to make spatially-informed decisions or gain spatial insights (e.g., finding the closest point of interest, calculating the area of a polygon, or identifying the route between two points).
 * manage geospatial data, such as creating, editing, and deleting features in a variety of formats, such as Shapefiles, GeoJSON, and KML.
 
-## 2.2 Out of Scope
+## 2.2 Future Scope
 
-The following aspects are out of the scope of the current version of the GIS Building Block specifications considered in this document:
+The following aspects are on the future scope for the GIS Building Block specifications considered in this document:
 
 * Processing of raster data (e.g., satellite and drone imagery, gridded data) such as performing image classification, image enhancement, segmentation, and other types of analysis.
 * Performing complex geospatial analysis, such as spatial interpolation or complex spatial statistics (e.g., spatial autocorrelation and spatial regression)
@@ -113,5 +113,9 @@ The following aspects are out of the scope of the current version of the GIS Bui
 * Sharing and accessing GIS 3D data models such as TINs, BLMs, and scenery.
 * Analysis of 3D GIS data models such as performing LiDAR analysis, volumetric calculations, or 3D modeling.
 * Supporting time-based dynamic tracking of objects, whether those that are GPS/sensor-based such as Automatic Vehicle Location (AVL) or spatiotemporal based on time-stamped such as traffic accidents or weather storms.
-* Adapting to or addressing a country's specific data privacy policies and any legal or ethical implications associated with the amount and level of information that GIS BB services can gather. It is important to carefully consider any legal or ethical implications associated with using the GIS BB services according to the context and applications they serve, and to take measures to ensure that any collected data is being used responsibly and appropriately.
 
+## 2.3 Out of Scope
+
+The following aspects are out of the scope of the current version of the GIS Building Block specifications considered in this document:
+
+* Adapting to or addressing a country's specific data privacy policies and any legal or ethical implications associated with the amount and level of information that GIS BB services can gather. It is important to carefully consider any legal or ethical implications associated with using the GIS BB services according to the context and applications they serve, and to take measures to ensure that any collected data is being used responsibly and appropriately.
