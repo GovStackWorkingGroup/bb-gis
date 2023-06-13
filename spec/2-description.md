@@ -118,4 +118,10 @@ The following aspects are on the future scope for the GIS Building Block specifi
 
 The following aspects are out of the scope of the current version of the GIS Building Block specifications considered in this document:
 
-* Adapting to or addressing a country's specific data privacy policies and any legal or ethical implications associated with the amount and level of information that GIS BB services can gather. It is important to carefully consider any legal or ethical implications associated with using the GIS BB services according to the context and applications they serve, and to take measures to ensure that any collected data is being used responsibly and appropriately.
+* The GIS BB specifications do not address a country's specific data privacy policies, as well as any legal or ethical implications associated with the amount and level of information that can be gathered by GIS BB services. It is crucial to carefully consider any legal or ethical implications associated with using these tools and to take steps to ensure that any collected data is being used responsibly and appropriately.
+* The GIS BB specifications do not define the security measures that should be used to protect GIS data. Security requirements for geographic data can vary depending on the sensitivity of the data and the environment in which it is used.
+* The GIS BB specifications do not define the data formats that should be used to store or exchange geographic data. Many different data formats are available, each with its advantages and disadvantages.
+* The GIS BB specifications do not define the quality of the geographic data that should be used. The quality of geographic data can vary depending on the source of the data and the methods used to collect it.
+*   The GIS BB specifications do not define how geographic data should be visualized. This is because geographic data visualization is a subjective process that depends on the user’s needs.
+
+    .
