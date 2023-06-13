@@ -31,8 +31,8 @@ Below are a few examples of the many sectors that can benefit from GIS services 
 
 The functional requirements to cover the services required from the GIS Building Block currently consider the specific use cases of:
 
-* GIS-Based Incident Management System ([https://govstack-global.atlassian.net/wiki/spaces/GH/pages/254017537](https://govstack-global.atlassian.net/wiki/spaces/GH/pages/254017537))
-* Land Records/Cadastre Management ([https://govstack-global.atlassian.net/wiki/spaces/GH/pages/254181377](https://govstack-global.atlassian.net/wiki/spaces/GH/pages/254181377))
+* GIS-Based Incident Management System ([https://govstack-global.atlassian.net/l/cp/jPn05EbR](https://govstack-global.atlassian.net/l/cp/jPn05EbR))
+* Land Records/Cadastre Management ([https://govstack-global.atlassian.net/l/cp/0dcEf3cm](https://govstack-global.atlassian.net/l/cp/0dcEf3cm))
 
 These two use cases cover a wide range of GIS services, including core functionality such as GIS data access, display, and visualization, GIS data query, GIS layer management and manipulation, metadata and cataloging services, locational analysis, geocoding, and reporting. The endless combination of these GIS services can be used to respond to the needs of various applications across many domains and sectors, as listed above.
 
