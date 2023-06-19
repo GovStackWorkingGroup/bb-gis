@@ -6,9 +6,15 @@ description: >-
 
 # 4 Key Digital Functionalities
 
-The various actors and their activities described in section 2 must be supported by
+The various actors and their activities described in Section 2 must be supported by the key digital functions, shown in the following diagram and detailed below.&#x20;
 
-### **4.1 Map Display**:&#x20;
+<div align="center">
+
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+</div>
+
+### **4.1 Map Display**:
 
 The Map Display for the GIS BB specifications is a fully configured GIS data viewing service that must:
 
