@@ -74,10 +74,32 @@ The Spatial Awareness and Analysis KDF for GIS BB specification enables the desi
 
 ### 4.6 Reporting
 
+The Reporting KDF for GIS BB specification provides a generic framework for consistently reporting GIS data, including defining the type and format of the generated report according to pre-defined reporting templates and the delivery of the reports. This KDF must:
 
+* allow selection among these types of reporting templates: map-based, chart-based, statistical-based, event-based, and resource-based.
+* allow access to GIS layers and attribute tables in a GIS database or data store.
+* allow for the specification of a destination point to which the report will be sent.
+* allow for the prioritization and scheduled delivery of reports.
+* allow for the management of the report queue, including recalling reports.
+* conform to and satisfy all requirements of applicable OGC standards, including the OGC API for Styles and the OGC API for Records.
 
 ### 4.7 Geofencing&#x20;
 
+The Geofencing Key Delivery Framework (KDF) for GIS BB specification allows for the creation and management of virtual "geofences" or "redlines" on a GIS map display. Geofences or redlines are polygonal areas or sketches drawn on a GIS map display and used to track objects that cross the virtual boundaries of the sketch using devices such as mobile phones, GPS trackers, and RFID tags. This KFD must:
 
+* allow the user to draw, create, modify, or delete geofence boundaries on the GIS map display.
+* authorize and manage rules for the geofence boundaries and track the objects within the geofence (e.g., designate which objects need to be tracked, setting "entry" and "exit" events, etc.).
+* create, send, and receive alerts when tracked objects enter or exit geofences in real time.
+* designate users or systems to receive geofencing alerts.
+* conform with the OGC API - Common and the OGC API - Features standards.
 
 ### 4.8 Routing
+
+The Routing KDF for GIS BB specification allows human or system actors to generate and manage network routes based on an underlying GIS road network. This KFD must:
+
+* enable the creation and management of routes independently of a specific routing engine or algorithm.
+* compute new routes based on a starting and ending point using the shortest distance.
+* specify additional routing rules and parameters (e.g., type of route (cars, buses, human), route barriers such as traffic conditions or the presence of over- and under-passes, adding stopping points, traffic conditions, road-turn directions, etc.).
+* create and manage service area parameters along the route (e.g., all gas stations within 2 KM of the route).
+* create route direction reports such as directions, turns, or time and distance charts for multiple locations along the route, etc.,&#x20;
+* conform to and satisfy all requirements of applicable OGC standards, including OGC API for Routes.
