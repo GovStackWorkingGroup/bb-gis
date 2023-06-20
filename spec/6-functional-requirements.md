@@ -17,6 +17,19 @@ Section 4 of the GIS BB specification covers the key digital functionalities req
 
 ### 6.2 GIS Query
 
+* \[REQUIRED] The GIS query must allow for transactions on and access to geographic features independently of the underlying data store.
+* \[REQUIRED] If feature metadata is not found in the metadata repository, the GIS Query must return a warning message.
+* \[REQUIRED] The GIS query must retrieve metadata that describes the layers and non-spatial tables offered by the GIS schema and their feature types from a data store. The query results must display the title, abstract, author, keywords, data format, and a snippet of the queried layers, along with their spatial extent and temporal information. The service must provide the following options for the retrieved metadata:
+  * Display the retrieved metadata record for all datasets and features meeting the selected criteria.
+  * Generate and print metadata record reports for the datasets.
+  * Visualize layers on a map view.
+  * Download or import the layer to the data store (if permitted by the service).
+* \[REQUIRED] The GIS query must allow for searching for features and their attributes. It must also provide different options for retrieving features or values of feature properties embedded in GIS layers from the data store (e.g., selected features meeting the query criteria will be highlighted on the data viewer of the map display and the attributes table (as records corresponding to the selected features)). The query options should be based on constraints defined by the client, including:
+  * Interactive selection of one or more features from the map display, either by directly clicking on them or using a graphical element (such as a box, circle, rectangle, transect, etc.).
+  * Ad hoc SQL queries based on attribute tables.
+  * Ad hoc queries based on locational information, such as geographic features located within a layer's boundaries, overlapping with a layer's boundaries, or near geographic features in a different layer.
+  * Execution of a predefined query.
+
 ### 6.3 GIS Data Management
 
 ### 6.4 Geocoding and Reverse Geocoding
