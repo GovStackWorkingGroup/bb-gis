@@ -1,16 +1,14 @@
+---
+description: This section lists the technical capabilities of this Building Block.
+---
+
 # 6 Functional Requirements
 
-{% hint style="success" %}
-The functional requirements section lists the technical capabilities that this building block should have. These requirements should be sufficient to deliver all functionality that is listed in the Key Digital Functionalities section.
+Section 4 of the GIS BB specification covers the key digital functionalities required for the management, processing, and use of geospatial information and their integration with other types of information and building blocks. The GIS BB offers these functionalities through RESTful API interfaces that exchange service requests and responses with external building blocks or applications. This section on functional requirements lists the technical components that each key digital function requires.
 
-These functional requirements do not define specific APIs - they provide a list of information about functionality that must be implemented within the building block.
+### 6.1 Map Display
 
-These requirements should be defined by subject-matter experts and don’t have to be highly technical in this section.
-
-If there are multiple functional components of a building block, the functional requirements for each component may have its own section
-{% endhint %}
-
-_\<Example Functional Requirements>_
+##
 
 ## 6.1.1 Display Map (REQUIRED)
 
