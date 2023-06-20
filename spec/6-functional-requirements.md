@@ -8,40 +8,23 @@ Section 4 of the GIS BB specification covers the key digital functionalities req
 
 ### 6.1 Map Display
 
-##
+* \[REQUIRED] The map display must provide access to GIS data through a data viewer (a web-based, desktop, or mobile application that allows viewing and querying of GIS data). The viewer should display a graphic representation (points, polygons, lines, or raster grids) of geographic or spatial information through thematic GIS layers or attribute tables. The symbology (pre-defined styles) for each map layer (how the geographic features of this layer are portrayed on the data viewer) must be displayed as a legend alongside a table of contents listing all layers provided by the service.
+* \[REQUIRED] The map display must allow the data viewer to manipulate displayed data layers. This includes hiding or displaying geographic features on the map display, changing their order, changing symbology, or classifying displayed geographic features. It must also provide access to attributes and metadata associated with the layer.
+* \[REQUIRED] The map display must enable the GIS data viewer to offer the basic navigation capabilities of a typical GIS data viewer. This includes zooming in and out of a map, panning, searching for geographic features by attribute or by coordinates, and measuring distances and areas on the displayed map.
+* \[RECOMMENDED] The map display should enable users to capture the spatial extent of a given location as a spatial bookmark in a GIS data viewer. Users should be able to name the bookmark and zoom to the exact extent whenever needed by selecting the bookmark's name. Users can also add, rename, and remove spatial bookmarks as necessary.
+* \[RECOMMENDED] The map display should allow users to set minimum and maximum scale limits for each layer, specifying whether or not a layer is identifiable and/or selectable on the data viewer. These settings are saved as a cache by the data viewer app and are reserved for future data viewer displays. The settings are reset to default when the cache is cleared.
+* \[OPTIONAL] The map display may allow the GIS user to add and share brief notes on the GID data viewer. Other users can view and comment on these notes. Notes can only be deleted by the creator of the note. Notes are saved and served as a web feature service.
 
-## 6.1.1 Display Map (REQUIRED)
+### 6.2 GIS Query
 
-Provides access to and use of GIS data through a Data Viewer. A data Viewer may be a web-based, desktop, or mobile application that allows viewing and querying of GIS data. It can also be used for collaboration through note posting. Map Display views the graphic representation of geographic or spatial information related to the base map as well as business layers. Symbology (pre-defined styles) for each map layer will be displayed as a legend alongside the table of contents.
+### 6.3 GIS Data Management
 
-## 6.1.2 Manipulate Layers(REQUIRED)
+### 6.4 Geocoding and Reverse Geocoding
 
-Manipulates the Layer's Table of Contents on the GIS Data Viewer, which allows for manipulation of displayed data layers and access to such information as attributes, metadata, etc. Each map layer's symbology (pre-defined styles) will be displayed as a legend alongside the table of contents.
+### 6.5 Spatial Awareness and Analysis
 
-## 6.1.3 Spatial Bookmarks (RECOMMENDED)
+### 6.6 Reporting
 
-Allows the user to capture the spatial extent of a given place or view of interest in the map display, give it a name, and be able to zoom to this exact extent whenever needed by selecting this name. Users can add, rename, and remove spatial bookmarks.
+### 6.7 Geofencing
 
-## 6.1.4 Find Coordinates (REQUIRED)
-
-Allows the user to "Pan" to an existing X, Y location that the user enters.
-
-## 6.1.4 Manage Map Settings (RECOMMENDED)
-
-Allows users to set for each layer min & max scale limit for display purposes, whether or not a layer is identifiable and/or selectable. Settings are saved by the data viewer app as a cache and reserved for future data viewer displays. Settings are rest to default when the cache is cleared.
-
-## 6.1.5 Take Notes (RECOMMENDED)
-
-Allows the GIS user to add and share brief notes on the map display. Other users can view and comment on these notes. Notes can only be deleted by the creator of the note. Notes are saved and served as a web feature service (WFS).
-
-## 6.7 Query GIS Data(REQUIRED)
-
-provides transactions on and access to geographic features independently of the underlying data store.
-
-## 6.8 Search Metadata (REQUIRED)
-
-Retrieves metadata describing the layers and non-spatial tables offered by the GIS schema and their feature types from a data store.
-
-## 6.9 Search Features and Attributes(REQUIRED)
-
-Provides different options for retrieving features or values of feature properties embedded in GIS layers from the data store based on constraints, defined by the client, on feature properties.
+### 6.8 Routing
