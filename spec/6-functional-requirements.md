@@ -40,9 +40,9 @@ Section 4 of the GIS BB specification covers the key digital functionalities req
   * adding or creating a new geographic feature in a GIS layer,
   * updating geographic features by either replacing them or modifying some of their properties,
   * deleting individual geographic features from a GIS layer.
-* \[REQUIRED] The GIS data management system must support various replica operations for GIS features, layers, and databases, including creation, synchronization, and data extraction. It is up to the implementers of the service to decide how the GIS data management system will handle the creation of large replicas, synchronization of large numbers of edits, or extraction of large amounts of data.
+* \[REQUIRED] The GIS data management system must support various replica operations for GIS features, layers, and databases, including creation, synchronization, and data extraction. It is up to the implementers of the service to decide how the GIS data management system will handle the creation of large replicas, the synchronization of large numbers of edits, or the extraction of large amounts of data.
 * \[RECOMMENDED] The GIS data management system should provide the following access control levels for the editing capabilities provided by the services to control how the client can consume the services:
-  * Editor permissions (at both the GIS layer and geographic feature levels) that control whether users can add, delete, or modify features in the service. For example, prevent or allow users from editing feature geometry.
+  * Editor permissions (at both the GIS layer and geographic feature levels) control whether users can add, delete, or modify features in the service. For example, prevent or allow users to edit feature geometry.
   * Editor tracking that records who created or updated the features and when they did it. This is useful when accountability for the edits is required. An optional history tracking feature maintains information about feature changes over time, allowing edits to be rolled back.
   * Ownership-based access control that limits access to geographic features based on who created them.
 
@@ -57,8 +57,57 @@ Section 4 of the GIS BB specification covers the key digital functionalities req
 
 ### 6.5 Spatial Awareness and Analysis
 
+* \[REQUIRED] The Spatial Awareness and Analysis service must allow retrieval of metadata that describes the purpose and functionality of geospatial analysis tasks or processes.
+* \[REQUIRED] The Spatial Awareness and Analysis service must allow retrieval of detailed information that describes the processes that can be run on the service.
+* \[REQUIRED] The Spatial Awareness and Analysis service must allow for the execution of one or more geoprocessing tasks to perform basic spatial analysis operations, using the input parameter values provided and returning the output values produced. The minimum set of tasks required by this service includes:
+  * Finding the nearest neighbor of a point.
+  * Calculating the area of a polygon.
+  * Buffering a geographic feature (point, line, or polygon).
+  * Ingesting or merging two or more datasets (GIS layers) into a single dataset.
+  * Creating a new GIS dataset (GIS layer) from an existing dataset.
+  * Exporting a GIS dataset to a different format, such as a shapefile, GeoJSON file, or KML file.
+* \[REQUIRED] The Spatial Awareness and Analysis service must support both asynchronous and synchronous modes of executing the tasks. The publisher of the service sets either one or both of the modes. The asynchronous task must have logic implemented to check the status of a task and handle the result once execution is finished as the following:
+  * returns the status of an asynchronously executed job.
+  * returns the result of a finished processing job that was invoked asynchronously.
+  * allows a client to terminate asynchronous processing jobs.
+* \[REQUIRED] The Spatial Awareness and Analysis service must fully support all parameter data types used as input or output parameters for OGC WPS services.
+
 ### 6.6 Reporting
+
+* \[REQUIRED] The GIS Reporting service must provide endpoints for templates and resources that can be used to create map layouts and cartographic reports, including the following:
+  * Symbology
+  * Charts
+  * Dot density maps
+  * Graduated color maps
+  * Graduated or proportional symbol maps
+  * Legends
+  * Scale bars
+  * North arrows
+* \[REQUIRED] The GIS Reporting service must allow for adding or removing dynamic GIS layers to or from a map layout or report.
+* \[REQUIRED] The GIS Reporting service must allow for defining and managing labels and annotations on a map layout.
+* \[REQUIRED] The GIS Reporting service must allow for prioritization and scheduled delivery of reports.
+* \[REQUIRED] The GIS Reporting service must allow for managing the report queue and canceling or recalling reporting tasks.
 
 ### 6.7 Geofencing
 
+* \[REQUIRED] The geofencing service must allow for the creation of new geofences.
+* \[REQUIRED] The geofencing service must allow for updating or modifying the size and shape of geofence boundaries.
+* \[REQUIRED] The geofencing service must allow for deleting existing geofences.
+* \[REQUIRED] The geofencing service must allow for listing and visually displaying all the geofences provided by the service on a map.
+* \[REQUIRED] The geofencing service must allow for activating or deactivating geofences. Once a geofence is activated, the service will start monitoring elements of interest (vehicles, devices, assets, and people) and send notifications when the device enters or exits the geofence. Once it is deactivated, the service will no longer monitor a geofence or if you need to change your geofence configuration.
+* \[REQUIRED] The geofencing service must allow for retrieving the status of a specific geofence (i.e., activated or deactivated).
+* \[REQUIRED] The geofencing service must support the specification, modification, deletion, and overall management of rules and actions that may be taken once elements of interest enter or exit a geofence.
+* \[REQUIRED] The geofencing service must support GPS or RFID tags or a combination of both to monitor the elements of interest.
+* \[RECOMMENDED] The geofencing service should support multiple notification types, such as push notifications, SMS notifications, and email notifications.
+
 ### 6.8 Routing
+
+* \[REQUIRED] The Routing service must allow for creating routes based on start and end nodes.
+* \[REQUIRED] The Routing service must allow for fetching and deleting routes stored on the server.
+* \[REQUIRED] The Routing service must offer one or more of the following commonly used routing parameters:
+  * specifying the type of transport when computing the route
+  * specifying intermediate passthrough points along the route
+  * specifying restrictions along the route (e.g., turn and direction restrictions, height restrictions for underpasses, bridge weight restrictions, etc.) or obstacles to avoid
+  * specifying additional routing rules and parameters (e.g., type of route for cars, buses, or humans, route barriers such as traffic conditions or the presence of over- and under-passes, adding stopping points, traffic conditions, road-turn directions, etc.)
+  * creating and managing service area parameters along the route
+* \[REQUIRED] The Routing service must generate direction and routing reports.
