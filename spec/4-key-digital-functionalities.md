@@ -10,7 +10,7 @@ The various actors and their activities described in Section 2 must be supported
 
 <div align="center">
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 </div>
 

@@ -4,13 +4,31 @@ description: This section provides context for this Building Block.
 
 # 2 Description
 
-Geospatial information represents Earth’s features: maps, images, addresses, zip codes, phone numbers, landmarks, events, etc. Location and time are foundational properties of geographic information, providing a unifying theme to understand the context of most real and abstract phenomena.
+Geospatial information represents Earth's features, including maps, images, addresses, zip codes, phone numbers, landmarks, events, and more. Location and time are fundamental properties of geographic information, providing a unifying theme to understand the context of most real and abstract phenomena.
 
-The GIS (geographic information services) building block enables various applications with location-based capabilities. Integrating a wide range of spatial data, such as maps, imagery, and location-based services, allows users to access and process geospatial data from different sources and link geographic locations to various "objects." within an open information technology environment For example, users can link geographic locations to people, such as patients, doctors, farmers, and agricultural extension practitioners. They can also link geographic locations to hospitals, ambulances, labs, seed production facilities, etc. Additionally, equipment such as ventilators and vaccine containers can be linked to geographic locations, as can sites like water sources and agricultural fields. This geographic association can also be tagged with a unique digital identifier and a timestamp of when it was acquired.
+The GIS (geographic information services) building block enables various applications with location-based capabilities. By integrating a wide range of spatial data, such as maps, imagery, and location-based services, users can access and process geospatial data from different sources and link geographic locations to various "objects" within an open information technology environment. For example, users can link geographic locations to people, such as patients, doctors, farmers, and agricultural extension practitioners. They can also link geographic locations to hospitals, ambulances, labs, seed production facilities, and more. Additionally, equipment such as ventilators and vaccine containers can be linked to geographic locations, as can sites like water sources and agricultural fields. This geographic association can also be tagged with a unique digital identifier and a timestamp of when it was acquired.
 
-Applications or components using geographical information services can collect, share, and use temporal and spatial information with other applications, such as map repositories and data visualization tools. These tools can display the collected information on geographical maps, giving users a powerful visual representation of the data. Furthermore, the collected data can be combined with other datasets, such as population, surveillance, or supply chain data sets, to enable interoperable geospatial and spatiotemporal analysis. This can help to identify patterns and trends in the data that might not otherwise be apparent.
+Applications or components using geographical information services can collect, share, and use temporal and spatial information with other applications, such as map repositories and data visualization tools. These tools can display the collected information on geographical maps, giving users a powerful visual representation of the data. Furthermore, the collected data can be combined with other datasets, such as population, surveillance, or supply chain datasets, to enable interoperable geospatial and spatiotemporal analysis. This can help identify patterns and trends in the data that might not otherwise be apparent.
 
-Below are a few examples of the many sectors that can benefit from GIS services and applications:
+## 2.1 **Relation to Existing Geospatial Information Standards**
+
+The GovStack GIS BB specifications are not meant to replace or compete with existing standards in GIS but rather to extend them to address a new niche related to application use cases serving specific sectors. There are several initiatives and entities dedicated to creating standards for geographic data, the most popular of which are: (1) ISO Technical Committee 211 on Geographic Information/Geomatics (ISO/TC 211) which produces the ISO 19xxx standard series, and (2) the Open Geospatial Consortium (OGC). Although these two organizations are independent and sometimes produce overlapping standards, they generally coordinate closely to maximize mutual development and minimize duplication.
+
+ISO standards are generally focused on the nature of geographic information and standards to encode and represent it in digital environments, while OGC standards are more focused on implementation of services and APIs for serving and processing GIS over the internet or across systems.
+
+The GovStack GIS BB specifications were developed to fill a new niche in the GIS standardization landscape. Instead of dealing with each standard in isolation or representing them abstractly, these specifications focus on converging existing standards and aligning them in a useful and applicable way to real-world scenarios or use cases relevant to governments and municipalities.
+
+&#x20;
+
+<figure><img src=".gitbook/assets/image.png" alt="" width="375"><figcaption><p>Relation to main standards in the Geospatial Information Domain</p></figcaption></figure>
+
+Specifically, the GovStack GIS BB specifications aim to:
+
+* **Make it easier for governments to adopt and use open standards for GIS.**
+* **Help governments build more interoperable and reusable GIS applications.**
+* **Enable governments to deliver more efficient and effective GIS services to citizens and businesses.**
+
+By extending existing standards and focusing on application use cases, the GovStack GIS BB specifications can help governments realize the full potential of GIS to improve public services and decision-making. Below are a few examples of the many sectors that can benefit from GIS services and applications.
 
 * **Local government:** cadastral mapping and management, land use and transportation planning, and optimization of services delivery such as postal services, trash collection, etc.
 * **Incident Management and Emergency Response**: call services, dispatching, tracking emergency vehicles and resources, redlining, etc.
@@ -27,7 +45,7 @@ Below are a few examples of the many sectors that can benefit from GIS services 
 * **Transportation:** planning transportation routes, tracking traffic, and improving public transportation.
 * **Utilities:** utility infrastructure management, customer data management, and utility expansion planning.
 
-## 2.1 **Current scope**
+## 2.2 **Current scope**
 
 The functional requirements to cover the services required from the GIS Building Block currently consider the specific use cases of:
 
@@ -103,7 +121,7 @@ The GIS BB services MUST enable these actors to perform the basic functions and 
 * perform geospatial analysis to make spatially-informed decisions or gain spatial insights (e.g., finding the closest point of interest, calculating the area of a polygon, or identifying the route between two points).
 * manage geospatial data, such as creating, editing, and deleting features in a variety of formats, such as Shapefiles, GeoJSON, and KML.
 
-## 2.2 Future Scope
+## 2.3 Future Scope
 
 The following aspects are on the future scope for the GIS Building Block specifications considered in this document:
 
@@ -114,7 +132,7 @@ The following aspects are on the future scope for the GIS Building Block specifi
 * Analysis of 3D GIS data models such as performing LiDAR analysis, volumetric calculations, or 3D modeling.
 * Supporting time-based dynamic tracking of objects, whether those that are GPS/sensor-based such as Automatic Vehicle Location (AVL) or spatiotemporal based on time-stamped such as traffic accidents or weather storms.
 
-## 2.3 Out of Scope
+## 2.4 Out of Scope
 
 The following aspects are out of the scope of the current version of the GIS Building Block specifications considered in this document:
 
