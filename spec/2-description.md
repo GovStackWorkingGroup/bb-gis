@@ -25,25 +25,25 @@ The GovStack GIS BB specifications were developed to fill a new niche in the GIS
 Specifically, the GovStack GIS BB specifications aim to:
 
 * **Make it easier for governments to adopt and use open standards for GIS.**
-* **Help governments build more interoperable and reusable GIS applications.**
-* **Enable governments to deliver more efficient and effective GIS services to citizens and businesses.**
+* **Help governments build more interoperable and reusable GIS applications and integrate them with other building blocks.**
+* **Enable governments to deliver more efficient and effective geo-enabled services to citizens and businesses.**
 
 By extending existing standards and focusing on application use cases, the GovStack GIS BB specifications can help governments realize the full potential of GIS to improve public services and decision-making. Below are a few examples of the many sectors that can benefit from GIS services and applications.
 
-* **Local government:** cadastral mapping and management, land use and transportation planning, and optimization of services delivery such as postal services, trash collection, etc.
+* **Local government:** cadastral mapping and management, land use and transportation planning, and optimization of service delivery such as postal services, trash collection, etc.
 * **Incident Management and Emergency Response**: call services, dispatching, tracking emergency vehicles and resources, redlining, etc.
 * **Law enforcement:** tracking crime patterns, investigating crimes, and public safety planning
 * **Natural resources:** managing water resources, monitoring forests, and conservation planning
-* **Planning:** planning for development, transportation, and other infrastructure projects.
-* **Agriculture:** tracking crop yields, providing weather information for farmers, planning for agricultural development, and precision farming.
-* **Business:** tracking assets and customer shopping habits, analyzing store locations, and supply chain management.
-* **Construction:** planning construction projects, tracking progress, and identifying potential hazards.
-* **Energy:** management of energy resources, planning for green energy development, and monitoring energy use.
-* **Environment:** measuring pollution, monitoring wildlife populations, and environmental protection.
-* **Healthcare:** managing disease outbreaks, planning for healthcare facilities, and improving access to patient care.
-* **Risk management:** modeling hazards, exposure, vulnerability analysis, and risk assessment and management.
-* **Transportation:** planning transportation routes, tracking traffic, and improving public transportation.
-* **Utilities:** utility infrastructure management, customer data management, and utility expansion planning.
+* **Planning:** planning for development, transportation, and other infrastructure projects
+* **Agriculture:** tracking crop yields, providing weather information for farmers, planning for agricultural development, and precision farming
+* **Business:** tracking assets and customer shopping habits, analyzing store locations, and supply chain management
+* **Construction:** planning construction projects, tracking progress, and identifying potential hazards
+* **Energy:** management of energy resources, planning for green energy development, and monitoring energy use
+* **Environment:** measuring pollution, monitoring wildlife populations, and environmental protection
+* **Healthcare:** managing disease outbreaks, planning for healthcare facilities, and improving access to patient care
+* **Risk management:** modeling hazards, exposure, vulnerability analysis, and risk assessment and management
+* **Transportation:** planning transportation routes, tracking traffic, and improving public transportation
+* **Utilities:** utility infrastructure management, customer data management, and utility expansion planning
 
 ## 2.2 **Current scope**
 
