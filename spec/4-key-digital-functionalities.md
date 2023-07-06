@@ -39,7 +39,7 @@ The GIS Query KDF for the GIS BB specification enables the creation and executio
   * allow to export the results of a query to various formats (e.g., CSV, KML, Shapefiles, etc.).
   * conform to and satisfy all requirements of the following OGC and ISO standards, including OGC catalogue service for the web (CSW), queryable Web Mapping Service (WMS), Web Feature Service (WFS), WFS Temporality Extension, Web Feature Service 2.0 Interface Standard, and ISO 19168-1:2020.
 
-### 4.3 GIS Layer Management
+### 4.3 GIS Data Management
 
 The GIS Data Management KDF for the GIS BB specifications is a configurable service that allows system and user actors to access data and features of a remote database and perform one or more of the following operations:
 
