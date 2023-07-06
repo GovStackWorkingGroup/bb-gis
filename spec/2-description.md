@@ -20,7 +20,7 @@ The GovStack GIS BB specifications were developed to fill a new niche in the GIS
 
 &#x20;
 
-<figure><img src=".gitbook/assets/image (1).png" alt="" width="375"><figcaption><p>Relation to main standards in the Geospatial Information Domain</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (2).png" alt="" width="375"><figcaption><p>Relation to main standards in the Geospatial Information Domain</p></figcaption></figure>
 
 Specifically, the GovStack GIS BB specifications aim to:
 
