@@ -8,11 +8,7 @@ description: >-
 
 The various actors and their activities described in Section 2 must be supported by the key digital functions, shown in the following diagram and detailed below.&#x20;
 
-<div align="center">
-
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
-
-</div>
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>Overview of the GIS BB KDFs</p></figcaption></figure>
 
 ### **4.1 Map Display**:
 
