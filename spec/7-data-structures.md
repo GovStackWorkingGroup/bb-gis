@@ -1,25 +1,12 @@
+---
+description: >-
+  This section provides information on the core data structures/data models that
+  are used by this Building Block.
+---
+
 # 7 Data Structures
 
-{% hint style="success" %}
-This section provides information on the core data structures/data models that are used by a Building Block. These data structures describe information that is exchanged between building blocks - they do not dictate internal data structures for a particular implementation. These data structures should also describe the _minimum_ set of information that should be passed in an API call. The data structures can be extended for particular use cases.
-
-For each data model, the following information should be provided:
-
-* Name
-* Description
-* Fields - the various fields in this data structure. Each field definition should contain the following:
-  * Name
-  * Type (string, Boolean, number, date, etc)
-  * Description
-  * Foreign Key (does this field reference another data structure)
-  * Constraints (does the field need to be unique, is it the primary key)
-  * Required (Y/N)
-  * You can also reference any standards that must be adhered to (ie. UTC standard for date/times)
-
-**Resource Model:** This section may also include a resource model diagram which shows the relationship between data objects that are used by this Building Block.
-{% endhint %}
-
-_\<Example Data Elements>_
+The diagrams below illustrate the proposed resource models that demonstrate the connections between data objects that the GIS Building Block uses. The resource models are represented by a UML class diagram.  The GIS building block specification likely has many relationships between different resource types, such as layers, symbologies, and bookmarks. The class diagram concisely represents the structure and relationship between objects in the resource model.
 
 ## 7.1 Map Display
 
