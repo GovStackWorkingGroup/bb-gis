@@ -21,7 +21,9 @@ For each data model, the following information should be provided:
 
 _\<Example Data Elements>_
 
-## 7.1 WorkList Data Structure:  <a href="#worklist-data-structure" id="worklist-data-structure"></a>
+## &#x20;<a href="#worklist-data-structure" id="worklist-data-structure"></a>
+
+## 7.1 WorkList Data Structure: <a href="#worklist-data-structure" id="worklist-data-structure"></a>
 
 **Description:** The WorkList data structure is used to track a list of subscribers to a particular session or event.
 
@@ -40,8 +42,6 @@ _\<Example Data Elements>_
 
 _Note: Recommend using_ [_https://app.diagrams.net/_](https://app.diagrams.net/) _to create the resource model and store in BuildingBlock repository_
 
-&#x20;_\<Example Resource Model>_
+_\<Example Resource Model>_
 
 <figure><img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FzdXe8NbIMZIv5sydPBf6%2Fuploads%2Fgit-blob-736cd906cff209af7113b298653cb11a8b5935b6%2Fdata-structures.png?alt=media" alt=""><figcaption></figcaption></figure>
-
-&#x20;

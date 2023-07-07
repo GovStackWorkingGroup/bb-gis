@@ -6,7 +6,7 @@ description: This section lists the technical capabilities of this Building Bloc
 
 ection 4 of the GIS BB specification covers the key digital functionalities required for managing, processing, and using geospatial information and their integration with other types of information and building blocks. The GIS BB offers these functionalities through RESTful API interfaces that exchange service requests and responses with external building blocks or applications. This section on functional requirements lists the technical components that each key digital function requires. The figure below summarizes these components per each key digital function.&#x20;
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>Function Components of the GIS BB Key Digital Functions</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption><p>Function Components of the GIS BB Key Digital Functions</p></figcaption></figure>
 
 ### 6.1 Map Display
 
