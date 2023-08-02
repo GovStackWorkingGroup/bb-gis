@@ -14,7 +14,7 @@ The diagrams below illustrate the proposed resource models that demonstrate the 
 
 ## 7.2 Data Elements
 
-### 7.2.2 Group: Map Display
+### 7.2.1 Group: Map Display
 
 #### &#x20;**MapDisplay**
 
@@ -60,7 +60,7 @@ The diagrams below illustrate the proposed resource models that demonstrate the 
 
 <table><thead><tr><th width="166">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Type</td><td>String (coded_domain)</td><td>A domain code specifying whether the client data viewer is desktop, mobile, web browser, or unknown.</td><td>The type of client accessing GIS APIs, may have some implications in terms of interactivity and user experience (navigation, layer manipulation, etc.)</td></tr></tbody></table>
 
-### 7.2.3 Group: GIS Query
+### 7.2.2 Group: GIS Query
 
 #### **LayerMetadata**&#x20;
 
