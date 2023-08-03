@@ -10,7 +10,7 @@ The diagrams below illustrate the proposed resource models that demonstrate the 
 
 ## 7.1 Resource Model
 
-<figure><img src=".gitbook/assets/Govstack_GIS_BB_Resource_Model.drawio (1) (1).png" alt=""><figcaption><p><a href="https://app.diagrams.net/#G19wpPBMka6gAqAPfduKZ_fDAwffVpV9f5">Diagram Source</a></p></figcaption></figure>
+<figure><img src=".gitbook/assets/Govstack_GIS_BB_Resource_Model.drawio (2).png" alt=""><figcaption><p><a href="https://app.diagrams.net/#G19wpPBMka6gAqAPfduKZ_fDAwffVpV9f5">Diagram Source</a></p></figcaption></figure>
 
 ## 7.2 Data Elements
 
@@ -76,12 +76,21 @@ The diagrams below illustrate the proposed resource models that demonstrate the 
 
 #### **GISQuery**
 
-<table><thead><tr><th width="166">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Type</td><td>String (coded_domain)</td><td>Type of the query, either "ad hoc" or "predefined."</td><td></td></tr><tr><td>QueryFormat</td><td>String</td><td>Format of the query (e.g., JSON, XML, SQL).</td><td></td></tr><tr><td>QueryString</td><td>String</td><td>The query expression (e.g., SQL)</td><td></td></tr><tr><td>TimeStamp</td><td>Date</td><td>Date and time when the query was executed or created</td><td></td></tr><tr><td>Name</td><td>String</td><td>Title or description of the query</td><td>Optional (only required for predefined query)</td></tr></tbody></table>
+<table><thead><tr><th width="166">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Type</td><td>String {coded_domain}</td><td>Type of the query, either "ad hoc" or "predefined."</td><td></td></tr><tr><td>QueryFormat</td><td>String</td><td>Format of the query (e.g., JSON, XML, SQL).</td><td></td></tr><tr><td>QueryString</td><td>String</td><td>The query expression (e.g., SQL)</td><td></td></tr><tr><td>TimeStamp</td><td>Date</td><td>Date and time when the query was executed or created</td><td></td></tr><tr><td>Name</td><td>String</td><td>Title or description of the query</td><td>Optional (only required for predefined query)</td></tr></tbody></table>
 
 #### **LocationalQuery**
 
+<table><thead><tr><th width="166">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>LayerType</td><td>Geometry</td><td>Type of the queried GIS layers (point, polygon, or line)</td><td></td></tr><tr><td>SpatialRelation</td><td>String {coded_domain}</td><td>Indicates the spatial relationship used in the query (e.g., "intersects," "contains," "within").</td><td></td></tr><tr><td>Longitude</td><td>Real</td><td>Represents the longitude value for the location in the query.</td><td>Optional: Required only if the queried geographic feature is represented by ONE POINT</td></tr><tr><td>Latitude</td><td>Real</td><td>Represents the latitude value for the location in the query.</td><td>Optional: Required only if the queried geographic feature is represented by ONE POINT</td></tr><tr><td>Distance</td><td>Real</td><td>Represents the distance used in the spatial query </td><td>Optional: Required only if the query requires a specification of a distance (e.g., bugger distance) </td></tr></tbody></table>
+
 #### **AttributeQuery**
+
+<table><thead><tr><th width="166">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>AttributeName</td><td>String</td><td>Name of the attribute being queried (e.g., "population," "temperature," "category").</td><td></td></tr><tr><td>Operator</td><td>String</td><td>Indicates the comparison operator used in the attribute query (e.g., "=", ">", "&#x3C;=", "LIKE").</td><td>The values for this attribute should follow the standard comparison operators</td></tr><tr><td>Value</td><td>String or Numeric</td><td>Represents the value used in the attribute query for comparison.</td><td>The data type of the Value attribute should match the data type of the attribute being queried. For example, if the AttributeName is "population" and the population values are stored as integers, the Value should also be of integer data type.</td></tr></tbody></table>
 
 **DiscoveryQuery**
 
+<table><thead><tr><th width="166">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>AttributeName</td><td>String</td><td>Contains the keywords or search terms used for discovering metadata information</td><td>This attribute will typically store a comma-separated list of keywords or a single string representing the search terms.</td></tr></tbody></table>
+
 **QueryResult**
+
+<table><thead><tr><th width="166">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>QueryType</td><td>String {coded_domain}</td><td>The type of query that generated this result </td><td>Coded values will include "Locational Query," "Attribute Query," and "Metadata Discovery Query,"</td></tr><tr><td>QueryStatus</td><td>String {coded_domain}</td><td>Represents the status of the query result</td><td>Possible values could be "Success," "Partial Result," "No Results Found," "Error," etc.</td></tr><tr><td>TimeStamp</td><td>Date</td><td>Represents the date and time when the query result was generated</td><td></td></tr></tbody></table>
+
