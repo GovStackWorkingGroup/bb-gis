@@ -138,3 +138,44 @@ The diagram below illustrates the proposed resource model that demonstrates the 
 
 <table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Status</td><td><p>String</p><p>{coded_value}</p></td><td>Status of the geoprocessing task execution (e.g., running, completed)</td><td></td></tr><tr><td>StartTime</td><td>Date</td><td>Timestamp indicating the start time of the geoprocessing task execution</td><td></td></tr><tr><td>EndTime</td><td>Date</td><td>Timestamp indicating the end time of the geoprocessing task execution</td><td></td></tr><tr><td>Result</td><td>Object</td><td>Result of the geoprocessing task execution</td><td>GIS layers, attributes, or information generated when executed successfully</td></tr></tbody></table>
 
+### 7.2.6 Reporting
+
+#### MapReport
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Title</td><td>String</td><td>Title/name of the map report</td><td></td></tr><tr><td>Abstract</td><td>String</td><td>A brief summary or abstract of the map report and its purpose</td><td></td></tr><tr><td>Author</td><td>String</td><td>The name of the author or creator of the report.</td><td></td></tr><tr><td>Keywords</td><td>String</td><td>Keywords or tags associated with the report.</td><td></td></tr><tr><td>LastUpdated</td><td>Date</td><td>The date and time when the report was created or last updated.</td><td></td></tr></tbody></table>
+
+#### ReportQueue
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Status</td><td><p>String</p><p>{coded_value}</p></td><td>Status of the report in the queue (e.g., pending, processing, completed).</td><td></td></tr><tr><td>Priority</td><td><p>String</p><p>{coded_value}</p></td><td>The priority level of the report in the queue (high, normal, low)</td><td></td></tr><tr><td>Recurring</td><td>Boolean</td><td>Indicates if the report is a recurring task</td><td></td></tr><tr><td>Interval</td><td>String</td><td>Time interval for recurring reports </td><td>Active only when Recurring is True</td></tr><tr><td>StartTime</td><td>Date</td><td>Timestamp indicating the start time of the report processing</td><td></td></tr><tr><td>EndTime</td><td>Date</td><td>Timestamp indicating the end time of the report processing</td><td></td></tr></tbody></table>
+
+#### ReportResource
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>ResourceName</td><td>String</td><td>Name of the Resource</td><td></td></tr><tr><td>ResourceType</td><td><p>String</p><p>{coded_value}</p></td><td>Type of the Resource (e.g., symbology, charts, north arrows, scale bar, etc.)</td><td></td></tr></tbody></table>
+
+#### Symbology
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>SymbolType</td><td><p>String</p><p>{coded_value}</p></td><td>Type of the symbol (e.g., Dot Density Maps, Graduated Color, Graduated/Proportional Symbol, etc.)</td><td></td></tr><tr><td>SymbolColor</td><td><p>String</p><p>{coded_value}</p></td><td>Color code of  the symbol</td><td></td></tr><tr><td>Transparency</td><td>Float</td><td>Transparency level of the symbol</td><td></td></tr></tbody></table>
+
+#### Label
+
+<table><thead><tr><th width="206">Field</th><th width="168">Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>LabelText</td><td>String</td><td>Text of the Label</td><td></td></tr><tr><td>PositionX</td><td>Real</td><td>X-coordinate position of the Label on the map report</td><td></td></tr><tr><td>PositionY</td><td>Real</td><td>Y-coordinate position of the Label on the map report</td><td></td></tr><tr><td>Font</td><td><p>String</p><p>{coded_value}</p></td><td>Font of the Label</td><td></td></tr><tr><td>Size</td><td>Integer</td><td>Size of the Label</td><td></td></tr><tr><td>Color</td><td><p>String</p><p>{coded_value}</p></td><td>Color of the Label</td><td></td></tr></tbody></table>
+
+#### Chart
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Title</td><td>String</td><td>Title of the chart</td><td></td></tr><tr><td>Type</td><td><p>String</p><p>{coded_value}</p></td><td>Type of the chart (e.g., bar chart, histogram, etc.)</td><td></td></tr><tr><td>Data</td><td>Blob</td><td>Data of the chart</td><td></td></tr></tbody></table>
+
+#### Legend
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Title</td><td>String</td><td>Name of the Legend</td><td></td></tr><tr><td>PositionX</td><td>Real</td><td>X-coordinate position of the Legend on the map</td><td></td></tr><tr><td>PositionY</td><td>Real</td><td>Y-coordinate position of the Legend on the map</td><td></td></tr><tr><td>Font</td><td><p>String</p><p>{coded_value}</p></td><td>Font of the Legend</td><td></td></tr><tr><td>Size</td><td>Integer</td><td>Size of the Legend font</td><td></td></tr><tr><td>Color</td><td><p>String</p><p>{coded_value}</p></td><td>Color of the Legend</td><td></td></tr></tbody></table>
+
+#### ScaleBar
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Title</td><td>String</td><td>Name of the scale bar</td><td></td></tr><tr><td>Style</td><td><p>String</p><p>{coded_value}</p></td><td>Type and style of the scale bar (linear, graphic, etc.)</td><td></td></tr><tr><td>Length</td><td>Float</td><td>Length of the scale bar on the map report</td><td></td></tr><tr><td>Units</td><td>String</td><td>Units of measurement for the scale bar</td><td></td></tr><tr><td>PositionX</td><td>Real</td><td>X-coordinate position of the scale bar on the map</td><td></td></tr><tr><td>PositionY</td><td>Real</td><td>Y-coordinate position of the scale bar on the map Legend on the map</td><td></td></tr><tr><td>Font</td><td><p>String</p><p>{coded_value}</p></td><td>Font of the Scale Bar</td><td></td></tr><tr><td>Size</td><td>Integer</td><td>Size of the Scale Bar</td><td></td></tr><tr><td>Color</td><td><p>String</p><p>{coded_value}</p></td><td>Color of the Scale Bar</td><td></td></tr></tbody></table>
+
+#### NorthArrow
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Title</td><td>String</td><td>Name of the north arrow</td><td></td></tr><tr><td>Style</td><td><p>String</p><p>{coded_value}</p></td><td>Type and style of the north arrows (simple, arrow with N, etc.)</td><td></td></tr><tr><td>Length</td><td>Float</td><td>Length of the North Arrow on the map report</td><td></td></tr><tr><td>Units</td><td>String</td><td>Units of measurement for the north arrow</td><td></td></tr><tr><td>PositionX</td><td>Real</td><td>X-coordinate position of the north arrow on the map</td><td></td></tr><tr><td>PositionY</td><td>Real</td><td>Y-coordinate position of the north arrow on the map</td><td></td></tr><tr><td>Font</td><td><p>String</p><p>{coded_value}</p></td><td>Font of the North Arrow</td><td></td></tr><tr><td>Size</td><td>Integer</td><td>Size of the North Arrow</td><td></td></tr><tr><td>Color</td><td><p>String</p><p>{coded_value}</p></td><td>Color of the North Arrow</td><td></td></tr></tbody></table>
+
+### 7.2.7 Gefencing
+
+### 7.2.8 Routing
