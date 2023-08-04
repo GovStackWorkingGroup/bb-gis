@@ -6,7 +6,7 @@ description: >-
 
 # 7 Data Structures
 
-The diagrams below illustrate the proposed resource models that demonstrate the connections between data objects that the GIS Building Block uses. The resource models are represented by a UML class diagram.  The GIS building block specification likely has many relationships between different resource types, such as layers, symbologies, and bookmarks. The class diagram concisely represents the structure and relationship between objects in the resource model.
+The diagram below illustrates the proposed resource model that demonstrates the connections between data objects that the GIS Building Block uses. The resource models are represented by a UML class diagram.  The GIS building block specification likely has many relationships between different resource types, such as layers, symbologies, and bookmarks. The class diagram concisely represents the structure and relationship between objects in the resource model.
 
 ## 7.1 Resource Model
 
