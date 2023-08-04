@@ -10,7 +10,7 @@ The diagram below illustrates the proposed resource model that demonstrates the 
 
 ## 7.1 Resource Model
 
-<figure><img src=".gitbook/assets/Govstack_GIS_BB_Resource_Model.drawio (2) (1).png" alt=""><figcaption><p><a href="https://app.diagrams.net/#G19wpPBMka6gAqAPfduKZ_fDAwffVpV9f5">Diagram Source</a></p></figcaption></figure>
+<figure><img src=".gitbook/assets/Govstack_GIS_BB_Resource_Model.drawio (3).png" alt=""><figcaption><p><a href="https://app.diagrams.net/#G19wpPBMka6gAqAPfduKZ_fDAwffVpV9f5">Diagram Source</a></p></figcaption></figure>
 
 ## 7.2 Data Elements
 
