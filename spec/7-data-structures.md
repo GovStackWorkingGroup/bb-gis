@@ -10,7 +10,7 @@ The diagrams below illustrate the proposed resource models that demonstrate the 
 
 ## 7.1 Resource Model
 
-<figure><img src=".gitbook/assets/Govstack_GIS_BB_Resource_Model.drawio (2).png" alt=""><figcaption><p><a href="https://app.diagrams.net/#G19wpPBMka6gAqAPfduKZ_fDAwffVpV9f5">Diagram Source</a></p></figcaption></figure>
+<figure><img src=".gitbook/assets/Govstack_GIS_BB_Resource_Model.drawio (1) (2).png" alt=""><figcaption><p><a href="https://app.diagrams.net/#G19wpPBMka6gAqAPfduKZ_fDAwffVpV9f5">Diagram Source</a></p></figcaption></figure>
 
 ## 7.2 Data Elements
 
@@ -60,19 +60,13 @@ The diagrams below illustrate the proposed resource models that demonstrate the 
 
 <table><thead><tr><th width="166">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Type</td><td>String (coded_domain)</td><td>A domain code specifying whether the client data viewer is desktop, mobile, web browser, or unknown.</td><td>The type of client accessing GIS APIs, may have some implications in terms of interactivity and user experience (navigation, layer manipulation, etc.)</td></tr></tbody></table>
 
-### 7.2.2 Group: GIS Query
-
 #### **LayerMetadata**&#x20;
 
 <table><thead><tr><th width="166">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Name</td><td>String</td><td>Title of the dataset or feature</td><td></td></tr><tr><td>Abstract</td><td>String</td><td>Abstract description of the dataset or feature</td><td>Must adheres to ISO 19115:2014 Standard pm GI Metadata <a href="https://www.iso.org/standard/53798.html">https://www.iso.org/standard/53798.html</a></td></tr><tr><td>Author</td><td>String</td><td>Author description</td><td>Must adheres to ISO 19115:2014 Standard pm GI Metadata <a href="https://www.iso.org/standard/53798.html">https://www.iso.org/standard/53798.html</a></td></tr><tr><td>Geometry</td><td>String {coded_domain}</td><td>Codes representing the geometry type of the layer (point, line, polygon, non-spatial)</td><td></td></tr><tr><td>Keywords</td><td>String</td><td>Keywords associated with the dataset or feature</td><td>Must adheres to ISO 19115:2014 Standard pm GI Metadata <a href="https://www.iso.org/standard/53798.html">https://www.iso.org/standard/53798.html</a></td></tr><tr><td>Snippet</td><td>Object</td><td>Snippet or summary of the dataset or feature</td><td></td></tr><tr><td>SpatialExtent</td><td>Array</td><td>Coordinates (lat &#x26; long) of the points defining the bounding box of the layer</td><td></td></tr><tr><td>LastUpdated</td><td>Date</td><td>Timestamp of the last update of the layer</td><td></td></tr></tbody></table>
 
-#### **DataStore**
+#### **NonSpaatialTableMetadata**&#x20;
 
-<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Name</td><td>String</td><td>Name or label of the GIS datastore</td><td></td></tr><tr><td>Description</td><td>String</td><td>A detailed description of the GIS data store</td><td></td></tr><tr><td>Provider</td><td>String</td><td>Provider or source of the GIS data store</td><td></td></tr><tr><td>ConnectionString</td><td>String</td><td>Connection string required to access the GIS data store</td><td></td></tr><tr><td>AccessRestrictions</td><td>Boolean</td><td>Enable or disable access restrictions or permissions required to use the GIS data store</td><td></td></tr><tr><td>Username</td><td>String</td><td>The username or account name required to authenticate and access the GIS data store</td><td></td></tr><tr><td>Password</td><td>String</td><td>The password associated with the username for authentication to the GIS data store</td><td></td></tr><tr><td>UpdateFrequency</td><td>String</td><td>Description of how often the GIS data store is updated or refreshed with new data</td><td></td></tr></tbody></table>
-
-#### **DataStoreMetadata**
-
-<table><thead><tr><th width="166">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Name</td><td>String</td><td>Title of the datastore </td><td></td></tr><tr><td>Source</td><td>String</td><td>Source/Publisher of the datastore </td><td>Must adheres to ISO 19115:2014 Standard pm GI Metadata <a href="https://www.iso.org/standard/53798.html">https://www.iso.org/standard/53798.html</a></td></tr><tr><td>Description</td><td>String</td><td>Description of the datastore</td><td>Must adheres to ISO 19115:2014 Standard pm GI Metadata <a href="https://www.iso.org/standard/53798.html">https://www.iso.org/standard/53798.html</a></td></tr><tr><td>Keywords</td><td>String</td><td>Keywords associated with the datastore </td><td>Must adheres to ISO 19115:2014 Standard pm GI Metadata <a href="https://www.iso.org/standard/53798.html">https://www.iso.org/standard/53798.html</a></td></tr><tr><td>LastUpdated</td><td>Date</td><td>Timestamp of the last publishing date of the datastore</td><td></td></tr></tbody></table>
+<table><thead><tr><th width="166">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Name</td><td>String</td><td>Title of the dataset or feature</td><td></td></tr><tr><td>Abstract</td><td>String</td><td>Abstract description of the dataset or feature</td><td>Must adheres to ISO 19115:2014 Standard pm GI Metadata <a href="https://www.iso.org/standard/53798.html">https://www.iso.org/standard/53798.html</a></td></tr><tr><td>Author</td><td>String</td><td>Author description</td><td>Must adheres to ISO 19115:2014 Standard pm GI Metadata <a href="https://www.iso.org/standard/53798.html">https://www.iso.org/standard/53798.html</a></td></tr><tr><td>Keywords</td><td>String</td><td>Keywords associated with the dataset or feature</td><td>Must adheres to ISO 19115:2014 Standard pm GI Metadata <a href="https://www.iso.org/standard/53798.html">https://www.iso.org/standard/53798.html</a></td></tr><tr><td>LastUpdated</td><td>Date</td><td>Timestamp of the last update of the table</td><td></td></tr></tbody></table>
 
 #### **GISQuery**
 
@@ -94,3 +88,24 @@ The diagrams below illustrate the proposed resource models that demonstrate the 
 
 <table><thead><tr><th width="166">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>QueryType</td><td>String {coded_domain}</td><td>The type of query that generated this result </td><td>Coded values will include "Locational Query," "Attribute Query," and "Metadata Discovery Query,"</td></tr><tr><td>QueryStatus</td><td>String {coded_domain}</td><td>Represents the status of the query result</td><td>Possible values could be "Success," "Partial Result," "No Results Found," "Error," etc.</td></tr><tr><td>TimeStamp</td><td>Date</td><td>Represents the date and time when the query result was generated</td><td></td></tr></tbody></table>
 
+### 7.2.3 Group: GIS Data Management
+
+#### **DataStore**
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Name</td><td>String</td><td>Name or label of the GIS datastore</td><td></td></tr><tr><td>Description</td><td>String</td><td>A detailed description of the GIS data store</td><td></td></tr><tr><td>Provider</td><td>String</td><td>Provider or source of the GIS data store</td><td></td></tr><tr><td>ConnectionString</td><td>String</td><td>Connection string required to access the GIS data store</td><td></td></tr><tr><td>AccessRestrictions</td><td>Boolean</td><td>Enable or disable access restrictions or permissions required to use the GIS data store</td><td></td></tr><tr><td>UpdateFrequency</td><td>String</td><td>Description of how often the GIS data store is updated or refreshed with new data</td><td></td></tr></tbody></table>
+
+#### **DataStoreMetadata**
+
+<table><thead><tr><th width="166">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Name</td><td>String</td><td>Title of the datastore </td><td></td></tr><tr><td>Source</td><td>String</td><td>Source/Publisher of the datastore </td><td>Must adheres to ISO 19115:2014 Standard pm GI Metadata <a href="https://www.iso.org/standard/53798.html">https://www.iso.org/standard/53798.html</a></td></tr><tr><td>Description</td><td>String</td><td>Description of the datastore</td><td>Must adheres to ISO 19115:2014 Standard pm GI Metadata <a href="https://www.iso.org/standard/53798.html">https://www.iso.org/standard/53798.html</a></td></tr><tr><td>Keywords</td><td>String</td><td>Keywords associated with the datastore </td><td>Must adheres to ISO 19115:2014 Standard pm GI Metadata <a href="https://www.iso.org/standard/53798.html">https://www.iso.org/standard/53798.html</a></td></tr><tr><td>LastUpdated</td><td>Date</td><td>Timestamp of the last publishing date of the datastore</td><td></td></tr></tbody></table>
+
+#### **UserControl**
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Username</td><td>String</td><td>Username for authentication</td><td></td></tr><tr><td>Password</td><td>String</td><td>The password associated with the username for authentication to the GIS data store</td><td></td></tr><tr><td>EditorPermissions</td><td><p>String</p><p>{coded_value}</p></td><td>Codes depicting access control level over editing capabilities provided by the service (view, edit, delete, no edits)</td><td></td></tr><tr><td>EditorTracking</td><td>Boolean</td><td>Whether or not it should record who created or updated features and when they did it (providing accountability for the edits)</td><td>Optional</td></tr><tr><td>OwnerControl</td><td>Boolean</td><td>Limits access to geographic features based on who created them.</td><td>Optional</td></tr></tbody></table>
+
+#### EditorTracking
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>EditType</td><td><p>String</p><p>{coded_value}</p></td><td>Type of editing operation (create, update, delete)</td><td></td></tr><tr><td>TimeStamp</td><td>String</td><td>Timestamp indicating when the edit was made</td><td></td></tr></tbody></table>
+
+#### **Replica**
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>SourceDataStore</td><td>String {url}</td><td>Links the replica to the source GIS Datastore.</td><td></td></tr><tr><td>TargetDataStore</td><td>String {url}</td><td>Links the replica to the target GIS Datastore.</td><td></td></tr><tr><td>ReplicaType</td><td><p>String</p><p>{coded_value}</p></td><td>Type of replica operation (creation, synchronization, extraction).</td><td></td></tr></tbody></table>
