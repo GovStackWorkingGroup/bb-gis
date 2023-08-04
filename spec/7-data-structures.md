@@ -10,7 +10,7 @@ The diagram below illustrates the proposed resource model that demonstrates the 
 
 ## 7.1 Resource Model
 
-<figure><img src=".gitbook/assets/Govstack_GIS_BB_Resource_Model.drawio (3).png" alt=""><figcaption><p><a href="https://app.diagrams.net/#G19wpPBMka6gAqAPfduKZ_fDAwffVpV9f5">Diagram Source</a></p></figcaption></figure>
+<figure><img src=".gitbook/assets/Govstack_GIS_BB_Resource_Model.drawio (4).png" alt=""><figcaption><p><a href="https://app.diagrams.net/#G19wpPBMka6gAqAPfduKZ_fDAwffVpV9f5">Diagram Source</a></p></figcaption></figure>
 
 ## 7.2 Data Elements
 
@@ -177,5 +177,7 @@ The diagram below illustrates the proposed resource model that demonstrates the 
 <table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Title</td><td>String</td><td>Name of the north arrow</td><td></td></tr><tr><td>Style</td><td><p>String</p><p>{coded_value}</p></td><td>Type and style of the north arrows (simple, arrow with N, etc.)</td><td></td></tr><tr><td>Length</td><td>Float</td><td>Length of the North Arrow on the map report</td><td></td></tr><tr><td>Units</td><td>String</td><td>Units of measurement for the north arrow</td><td></td></tr><tr><td>PositionX</td><td>Real</td><td>X-coordinate position of the north arrow on the map</td><td></td></tr><tr><td>PositionY</td><td>Real</td><td>Y-coordinate position of the north arrow on the map</td><td></td></tr><tr><td>Font</td><td><p>String</p><p>{coded_value}</p></td><td>Font of the North Arrow</td><td></td></tr><tr><td>Size</td><td>Integer</td><td>Size of the North Arrow</td><td></td></tr><tr><td>Color</td><td><p>String</p><p>{coded_value}</p></td><td>Color of the North Arrow</td><td></td></tr></tbody></table>
 
 ### 7.2.7 Gefencing
+
+
 
 ### 7.2.8 Routing
