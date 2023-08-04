@@ -10,7 +10,7 @@ The diagrams below illustrate the proposed resource models that demonstrate the 
 
 ## 7.1 Resource Model
 
-<figure><img src=".gitbook/assets/Govstack_GIS_BB_Resource_Model.drawio (1) (2).png" alt=""><figcaption><p><a href="https://app.diagrams.net/#G19wpPBMka6gAqAPfduKZ_fDAwffVpV9f5">Diagram Source</a></p></figcaption></figure>
+<figure><img src=".gitbook/assets/Govstack_GIS_BB_Resource_Model.drawio (2) (1).png" alt=""><figcaption><p><a href="https://app.diagrams.net/#G19wpPBMka6gAqAPfduKZ_fDAwffVpV9f5">Diagram Source</a></p></figcaption></figure>
 
 ## 7.2 Data Elements
 
@@ -109,3 +109,32 @@ The diagrams below illustrate the proposed resource models that demonstrate the 
 #### **Replica**
 
 <table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>SourceDataStore</td><td>String {url}</td><td>Links the replica to the source GIS Datastore.</td><td></td></tr><tr><td>TargetDataStore</td><td>String {url}</td><td>Links the replica to the target GIS Datastore.</td><td></td></tr><tr><td>ReplicaType</td><td><p>String</p><p>{coded_value}</p></td><td>Type of replica operation (creation, synchronization, extraction).</td><td></td></tr></tbody></table>
+
+### 7.2.4 Geocoding and Reverse Geocoding
+
+#### **AddressData**
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Address</td><td>String</td><td>Address information for geocoding or reverse geocoding.</td><td></td></tr><tr><td>Latitude</td><td>Real</td><td>Latitude coordinate for the address </td><td>Used for Reverse Geocoding</td></tr><tr><td>Longitude</td><td>Real</td><td>Longitude coordinate for the address </td><td>Used for Reverse Geocoding</td></tr></tbody></table>
+
+#### **AddressAlias**
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Alias</td><td>String</td><td>Alias or potential alternative address for the Address Data</td><td>An address may have <em>0</em> to <em>n</em> aliases</td></tr></tbody></table>
+
+#### **AddressFormat**
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>FormatingName</td><td>String</td><td>Name of the address format</td><td></td></tr><tr><td>CountryCode</td><td><p>String</p><p>{coded_value}</p></td><td>Country code for the address format</td><td>Optional</td></tr><tr><td>FormatString</td><td>String</td><td>Format string representing the structure of the address</td><td></td></tr></tbody></table>
+
+#### **GeocodingBatch**
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>BatchType</td><td><p>String</p><p>{coded_value}</p></td><td>Code representing whether the batch performs geocoding or reverse geocoding</td><td></td></tr><tr><td>BatchName</td><td>String</td><td>Name of the geocoding batch</td><td></td></tr><tr><td>Status</td><td><p>String</p><p>{coded_value}</p></td><td>Status of the geocoding batch (e.g., processing, completed)</td><td></td></tr><tr><td>TimeStamp</td><td>Date</td><td>Date and time of when the geocoding batch was completed.</td><td></td></tr></tbody></table>
+
+### 7.2.5 Spatial Awareness and Analysis
+
+#### **Geoprocessing**
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="206">Description</th><th>Notes</th></tr></thead><tbody><tr><td>ProcessingName</td><td>String</td><td>Name of the geoprocessing task</td><td></td></tr><tr><td>Description</td><td>String</td><td>Detailed information that describes the geoprocessing task</td><td></td></tr><tr><td>Parameters</td><td>Array</td><td>Array of input and output parameters that are needed to execute the geoprocessing job (parameter name, value, code represents whether it is input or output parameter, and default value)</td><td>Refer to OGC API Processes: <a href="https://ogcapi.ogc.org/processes/">https://ogcapi.ogc.org/processes/</a></td></tr></tbody></table>
+
+#### **ExecustionStatus**
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Status</td><td><p>String</p><p>{coded_value}</p></td><td>Status of the geoprocessing task execution (e.g., running, completed)</td><td></td></tr><tr><td>StartTime</td><td>Date</td><td>Timestamp indicating the start time of the geoprocessing task execution</td><td></td></tr><tr><td>EndTime</td><td>Date</td><td>Timestamp indicating the end time of the geoprocessing task execution</td><td></td></tr><tr><td>Result</td><td>Object</td><td>Result of the geoprocessing task execution</td><td>GIS layers, attributes, or information generated when executed successfully</td></tr></tbody></table>
+
