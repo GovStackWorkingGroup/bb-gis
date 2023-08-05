@@ -178,6 +178,36 @@ The diagram below illustrates the proposed resource model that demonstrates the 
 
 ### 7.2.7 Gefencing
 
+#### Geofence
 
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Name</td><td>String</td><td>Name of the Geofence</td><td></td></tr><tr><td>Shape</td><td><p>String</p><p>{coded_value}</p></td><td>Shape of the Geofence (e.g., circle, polygon).</td><td></td></tr><tr><td>Size</td><td>Float</td><td>Size of the Geofence, representing the radius for a circular Geofence or the area for a polygon Geofence</td><td></td></tr><tr><td>Status</td><td>Boolean</td><td>Indicates if the Geofence is activated or deactivated</td><td></td></tr></tbody></table>
+
+#### GefenceElement
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>ElementType</td><td><p>String</p><p>{coded_value}</p></td><td>Type of the tracked element (e.g., vehicle, device, asset, person).</td><td></td></tr><tr><td>TrackingMethod</td><td><p>String</p><p>{coded_value}</p></td><td>Method of tracking (GPS Coordinates, RFID tags, etc.)</td><td></td></tr></tbody></table>
+
+#### ActionRule
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>ActionType</td><td><p>String</p><p>{coded_value}</p></td><td>Type of action to be performed (e.g., send notification, execute command).</td><td></td></tr><tr><td>Action</td><td><p>String</p><p>{coded_value}</p></td><td>Description and details or parameters related to the action</td><td></td></tr></tbody></table>
+
+#### Geofence Notification
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>NotificationType</td><td><p>String</p><p>{coded_value}</p></td><td>Type of notification (e.g., push notification, SMS, email).</td><td></td></tr><tr><td>Recipient</td><td>String</td><td>Recipient's contact information (e.g., email address, phone number).</td><td></td></tr><tr><td>RecipientType</td><td><p>String</p><p>{coded_value}</p></td><td>Type of recipient (e.g., user, group)</td><td></td></tr></tbody></table>
 
 ### 7.2.8 Routing
+
+#### Route
+
+<table><thead><tr><th width="213">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>StartNode</td><td>Object</td><td>Geographic feature representing the starting point of the route</td><td></td></tr><tr><td>EndNode</td><td>Object</td><td>Geographic feature representing the ending point of the route</td><td></td></tr><tr><td>PassThrough</td><td>Boolean</td><td>Indicates whether the route should pass through intermediate points</td><td></td></tr><tr><td>Restrictions</td><td>String</td><td>Specifies any restrictions or obstacles to avoid along the route</td><td></td></tr><tr><td>AdditionalParameters</td><td>String</td><td>Additional routing rules and parameters for the route</td><td></td></tr></tbody></table>
+
+#### RouteNode
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Latitude</td><td>Real</td><td>Latitude coordinate of the node</td><td></td></tr><tr><td>Longitude</td><td>Real</td><td>Longitude coordinate of the node</td><td></td></tr><tr><td>Order</td><td>Integer</td><td>Order of the node in the route sequence</td><td></td></tr></tbody></table>
+
+#### RouteSegment
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>StartNode</td><td>Object</td><td>Geographic feature representing the starting point of the route segment</td><td></td></tr><tr><td>EndNode</td><td>Object</td><td>Geographic feature representing the ending point of the route segment</td><td></td></tr><tr><td>Length</td><td>Float</td><td>Length of the route segment</td><td></td></tr></tbody></table>
+
+#### ServiceArea
+
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Shape</td><td><p>String</p><p>{coded_value}</p></td><td>Shape of the service area (e.g., circle, polygon).</td><td></td></tr><tr><td>Size</td><td>Float</td><td>Size of the service area, representing the radius for a circular service area or the area for a polygon </td><td></td></tr></tbody></table>
