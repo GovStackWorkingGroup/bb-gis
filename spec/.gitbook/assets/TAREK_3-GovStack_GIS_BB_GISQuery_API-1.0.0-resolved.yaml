@@ -1,0 +1,254 @@
+---
+openapi: 3.0.0
+info:
+  title: GIS Query API
+  description: |
+    The GIS Query API enables the creation and execution of GIS data discovery and query operations.
+  version: 1.0.0
+Servers:
+  - url: https://host/{version}/GIS_BB/GISQuery
+    variables:
+      version:
+        description: API version
+        default: v1
+tags:
+- name: Discovery
+  description: Endpoints for discovering GIS layer metadata and feature types
+- name: Query
+  description: Endpoints for performing interactive and predefined GIS queries
+paths:
+  /discovery/metadata/{layerId}:
+    get:
+      tags:
+      - Discovery
+      summary: Retrieve GIS layer metadata by layer ID
+      parameters:
+      - name: layerId
+        in: path
+        description: ID of the layer to retrieve metadata for
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Layer metadata retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LayerMetadata'
+        "404":
+          description: Layer not found. The specified ID does not exist.
+        "500":
+          description: Internal server error. Failed to retrieve layer metadata.
+  /discovery/feature-types/{layerId}:
+    get:
+      tags:
+      - Discovery
+      summary: Define feature types for a GIS layer by layer ID
+      parameters:
+      - name: layerId
+        in: path
+        description: ID of the layer to define feature types for
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Feature types defined successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FeatureTypes'
+        "404":
+          description: Layer not found. The specified ID does not exist.
+        "500":
+          description: Internal server error. Failed to define feature types.
+  /query/interactive:
+    post:
+      tags:
+      - Query
+      summary: Perform an interactive GIS query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InteractiveQueryRequest'
+      responses:
+        "200":
+          description: Query executed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueryResult'
+        "400":
+          description: Bad request. Invalid input data.
+        "500":
+          description: Internal server error. Failed to execute the query.
+  /query/predefined/{queryId}:
+    get:
+      tags:
+      - Query
+      summary: Execute a predefined GIS query by query ID
+      parameters:
+      - name: queryId
+        in: path
+        description: ID of the predefined query to execute
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Query executed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueryResult'
+        "404":
+          description: Query not found. The specified ID does not exist.
+        "500":
+          description: Internal server error. Failed to execute the query.
+components:
+  schemas:
+    LayerMetadata:
+      type: object
+      properties:
+        Name:
+          type: string
+          description: Title of the dataset or feature
+          example: Sample Layer
+        Abstract:
+          type: string
+          description: Abstract description of the dataset or feature
+          example: This is a sample layer description.
+        Author:
+          type: string
+          description: Author description
+          example: John Doe
+        Geometry:
+          type: string
+          description: Codes representing the geometry type of the layer
+          enum:
+          - point
+          - line
+          - polygon
+          - non-spatial
+        Keywords:
+          type: string
+          description: Keywords associated with the dataset or feature
+          example: "GIS, Sample, Data"
+        Snippet:
+          $ref: '#/components/schemas/LayerMetadata_Snippet'
+        SpatialExtent:
+          type: array
+          description: Coordinates (lat & long) of the points defining the bounding box of the layer
+          example:
+          - 40.7128
+          - -74.006
+          - 34.0522
+          - -118.2437
+          items:
+            type: number
+        LastUpdated:
+          type: string
+          description: Timestamp of the last update of the layer
+          format: date-time
+    FeatureTypes:
+      type: object
+      properties:
+        Types:
+          type: array
+          description: List of feature types for the GIS layer
+          example:
+          - point
+          - line
+          - polygon
+          items:
+            type: string
+    InteractiveQueryRequest:
+      type: object
+      properties:
+        LayerType:
+          type: string
+          description: "Type of the queried GIS layers (point, polygon, or line)"
+          enum:
+          - point
+          - polygon
+          - line
+        SpatialRelation:
+          type: string
+          description: "Indicates the spatial relationship used in the query (e.g., \"intersects,\" \"contains,\" \"within\")"
+        Longitude:
+          type: number
+          description: Represents the longitude value for the location in the query
+        Latitude:
+          type: number
+          description: Represents the latitude value for the location in the query
+        Distance:
+          type: number
+          description: Represents the distance used in the spatial query
+        AttributeQuery:
+          $ref: '#/components/schemas/AttributeQuery'
+    AttributeQuery:
+      type: object
+      properties:
+        AttributeName:
+          type: string
+          description: "Name of the attribute being queried (e.g., \"population,\" \"temperature,\" \"category\")"
+        Operator:
+          type: string
+          description: "Indicates the comparison operator used in the attribute query (e.g., \"=\", \">\", \"<=\", \"LIKE\")"
+        Value:
+          type: string
+          description: Represents the value used in the attribute query for comparison
+    LocationalQuery:
+      type: object
+      properties:
+        LayerType:
+          type: string
+          description: "Type of the queried GIS layers (point, polygon, or line)"
+          enum:
+          - point
+          - polygon
+          - line
+        SpatialRelation:
+          type: string
+          description: "Indicates the spatial relationship used in the query (e.g., \"intersects,\" \"contains,\" \"within\")"
+        Longitude:
+          type: number
+          description: Represents the longitude value for the location in the query
+        Latitude:
+          type: number
+          description: Represents the latitude value for the location in the query
+        Distance:
+          type: number
+          description: Represents the distance used in the spatial query
+    QueryResult:
+      type: object
+      properties:
+        QueryType:
+          type: string
+          description: The type of query that generated this result
+          enum:
+          - Locational Query
+          - Attribute Query
+          - Metadata Discovery Query
+        QueryStatus:
+          type: string
+          description: Represents the status of the query result
+        TimeStamp:
+          type: string
+          description: Represents the date and time when the query result was generated
+          format: date-time
+    LayerMetadata_Snippet:
+      type: object
+      properties:
+        Description:
+          type: string
+          description: Snippet or summary description
+      description: Snippet or summary of the dataset or feature
