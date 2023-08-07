@@ -50,7 +50,7 @@ The diagram below illustrates the proposed resource model that demonstrates the 
 
 #### **ScaleLimit**
 
-<table><thead><tr><th width="166">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>MinScale</td><td>Integer</td><td>Specifies the minimum scale to dhow the layer's feature on map display</td><td>If set, the layer features disappear from the map display once zoom into beyond the minimum scale limit</td></tr><tr><td>MaxScale</td><td>Integer</td><td>Specifies the minimum scale to dhow the layer's feature on map display</td><td>If set, the layer features disappear from the map display once zoom out beyond the maximum scale limit</td></tr></tbody></table>
+<table><thead><tr><th width="166">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>MinScale</td><td>Integer</td><td>Specifies the minimum scale to show the layer's feature on map display</td><td>If set, the layer features disappear from the map display once zoom into beyond the minimum scale limit</td></tr><tr><td>MaxScale</td><td>Integer</td><td>Specifies the minimum scale to show the layer's feature on map display</td><td>If set, the layer features disappear from the map display once zoom out beyond the maximum scale limit</td></tr></tbody></table>
 
 #### **Style**
 
