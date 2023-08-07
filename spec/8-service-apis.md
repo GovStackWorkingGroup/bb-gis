@@ -14,3 +14,36 @@ This section provides a reference for APIs that this Building Block should imple
 
 The [GovStack non-functional requirements document](https://govstack.gitbook.io/specification/architecture-and-nonfunctional-requirements/6-onboarding) provides additional information on how 'adaptors' may be used to translate an existing API to the patterns described here.
 
+### 8.1 Map Display
+
+{% swagger src=".gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml" path="/type" method="get" %}
+[TAREK_3-MapDisplay-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml" path="/details" method="get" %}
+[TAREK_3-MapDisplay-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml" path="/bookmarks" method="post" %}
+[TAREK_3-MapDisplay-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml" path="/scale" method="put" %}
+[TAREK_3-MapDisplay-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml" path="/navigation" method="put" %}
+[TAREK_3-MapDisplay-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml" path="/notes" method="post" %}
+[TAREK_3-MapDisplay-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml" path="/measuring" method="post" %}
+[TAREK_3-MapDisplay-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml" path="/style" method="get" %}
+[TAREK_3-MapDisplay-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml)
+{% endswagger %}
