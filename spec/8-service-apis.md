@@ -49,19 +49,3 @@ The [GovStack non-functional requirements document](https://govstack.gitbook.io/
 {% endswagger %}
 
 ### 8.2 GIS Query&#x20;
-
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GIS_BB_GISQuery_API-1.0.0-resolved.yaml" path="/discovery/metadata/{layerId}" method="get" %}
-[TAREK_3-GovStack_GIS_BB_GISQuery_API-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GIS_BB_GISQuery_API-1.0.0-resolved.yaml)
-{% endswagger %}
-
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GIS_BB_GISQuery_API-1.0.0-resolved.yaml" path="/discovery/feature-types/{layerId}" method="get" %}
-[TAREK_3-GovStack_GIS_BB_GISQuery_API-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GIS_BB_GISQuery_API-1.0.0-resolved.yaml)
-{% endswagger %}
-
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GIS_BB_GISQuery_API-1.0.0-resolved.yaml" path="/query/interactive" method="post" %}
-[TAREK_3-GovStack_GIS_BB_GISQuery_API-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GIS_BB_GISQuery_API-1.0.0-resolved.yaml)
-{% endswagger %}
-
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GIS_BB_GISQuery_API-1.0.0-resolved.yaml" path="/query/predefined/{queryId}" method="get" %}
-[TAREK_3-GovStack_GIS_BB_GISQuery_API-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GIS_BB_GISQuery_API-1.0.0-resolved.yaml)
-{% endswagger %}
