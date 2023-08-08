@@ -273,3 +273,27 @@ The [GovStack non-functional requirements document](https://govstack.gitbook.io/
 {% endswagger %}
 
 ### 8.8 Routing
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml" path="/routes" method="post" %}
+[GovStack_GISBB_Routing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml" path="/routes/{routeId}" method="get" %}
+[GovStack_GISBB_Routing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml" path="/routes/{routeId}" method="delete" %}
+[GovStack_GISBB_Routing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml" path="/routes/{routeId}/directions" method="get" %}
+[GovStack_GISBB_Routing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml" path="/routes/{routeId}/segments" method="get" %}
+[GovStack_GISBB_Routing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml" path="/service-areas" method="get" %}
+[GovStack_GISBB_Routing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml)
+{% endswagger %}

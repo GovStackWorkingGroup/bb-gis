@@ -202,7 +202,7 @@ The diagram below illustrates the proposed resource model that demonstrates the 
 
 #### RouteNode
 
-<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Latitude</td><td>Real</td><td>Latitude coordinate of the node</td><td></td></tr><tr><td>Longitude</td><td>Real</td><td>Longitude coordinate of the node</td><td></td></tr><tr><td>Order</td><td>Integer</td><td>Order of the node in the route sequence</td><td></td></tr></tbody></table>
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Longitude</td><td>Real</td><td>Longitude coordinate of the node</td><td></td></tr><tr><td>Latitude</td><td>Real</td><td>Latitude</td><td></td></tr><tr><td>Order</td><td>Integer</td><td>Order of the node in the route sequence</td><td></td></tr></tbody></table>
 
 #### RouteSegment
 
