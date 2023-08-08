@@ -115,3 +115,25 @@ The [GovStack non-functional requirements document](https://govstack.gitbook.io/
 {% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/edit-feature" method="post" %}
 [TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
 {% endswagger %}
+
+### 8.4 Geocoding and Reverse Geocoding
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml" path="/geocode" method="post" %}
+[GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml" path="/reverse-geocode" method="post" %}
+[GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml" path="/batch-geocode" method="post" %}
+[GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml" path="/geocode-result/{resultId}" method="get" %}
+[GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml" path="/reverse-geocode-result/{resultId}" method="get" %}
+[GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml)
+{% endswagger %}
