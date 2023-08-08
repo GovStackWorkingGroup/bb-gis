@@ -1,0 +1,155 @@
+openapi: 3.1.0
+info:
+  title: Spatial Awareness and Analysis API
+  version: 1.0.0
+servers:
+  - url: https://host/{version}/GIS_BB/Spatial_Awareness_Analysis
+    variables:
+      version:
+        description: API version
+        default: v1
+paths:
+  /metadata:
+    get:
+      summary: Get Metadata
+      description: Retrieve metadata that describes the purpose and functionality of geospatial analysis tasks or processes.
+      responses:
+        '200':
+          description: Successful response with metadata
+        '400':
+          description: Bad Request
+
+  /processes:
+    get:
+      summary: Get Available Processes
+      description: Retrieve detailed information that describes the processes that can be run on the service.
+      responses:
+        '200':
+          description: Successful response with available processes
+        '400':
+          description: Bad Request
+
+  /execute-task:
+    post:
+      summary: Execute Geoprocessing Task
+      description: Execute a geoprocessing task to perform basic spatial analysis operations.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Geoprocessing'
+      responses:
+        '200':
+          description: Successful response with geoprocessing result
+        '400':
+          description: Bad Request
+
+  /task-status/{taskId}:
+    get:
+      summary: Get Task Status
+      description: Get the status of an asynchronously executed geoprocessing task.
+      parameters:
+        - name: taskId
+          in: path
+          description: ID of the geoprocessing task
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response with task status
+        '404':
+          description: Task not found
+
+  /task-result/{taskId}:
+    get:
+      summary: Get Task Result
+      description: Get the result of a finished geoprocessing task.
+      parameters:
+        - name: taskId
+          in: path
+          description: ID of the geoprocessing task
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response with task result
+        '404':
+          description: Task not found
+
+  /terminate-task/{taskId}:
+    post:
+      summary: Terminate Task
+      description: Terminate an asynchronously executed geoprocessing task.
+      parameters:
+        - name: taskId
+          in: path
+          description: ID of the geoprocessing task
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task termination request received
+        '404':
+          description: Task not found
+
+components:
+  schemas:
+    Geoprocessing:
+      type: object
+      properties:
+        ProcessingName:
+          type: string
+        Description:
+          type: string
+        Parameters:
+          type: array
+          items:
+            type: object
+            properties:
+              ParameterName:
+                type: string
+              Value:
+                $ref: '#/components/schemas/ParameterString'  # Use the appropriate parameter data type schema
+              Code:
+                type: string
+              DefaultValue:
+                $ref: '#/components/schemas/ParameterString'  # Use the appropriate parameter data type schema
+
+    ExecutionStatus:
+      type: object
+      properties:
+        Status:
+          type: string
+        StartTime:
+          type: string
+          format: date-time
+        EndTime:
+          type: string
+          format: date-time
+        Result:
+          type: object
+
+    ParameterString:
+      type: string
+    ParameterNumber:
+      type: number
+      format: double
+    ParameterInteger:
+      type: integer
+    ParameterBoolean:
+      type: boolean
+    ParameterArray:
+      type: array
+      items:
+        type: string
+    ParameterObject:
+      type: object
+      properties:
+        key1:
+          type: string
+        key2:
+          type: number
