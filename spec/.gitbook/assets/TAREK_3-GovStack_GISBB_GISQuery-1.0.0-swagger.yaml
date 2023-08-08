@@ -1,0 +1,270 @@
+openapi: 3.0.0
+info:
+  title: GIS Query API
+  version: 1.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - url: https://host/{version}/GIS_BB/Query
+    variables:
+      version:
+        description: API version
+        default: v1
+paths:
+  /layer-metadata:
+    get:
+      summary: Retrieve GIS layer metadata
+      description: Retrieve GIS layer metadata and feature type definitions.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - Name: Sample Layer
+                  Abstract: A sample GIS layer
+                  Author: John Doe
+                  Geometry: point
+                  Keywords: sample, layer
+                  Snippet: This is a sample layer.
+                  SpatialExtent: [ [0, 0], [1, 1] ]
+                  LastUpdated: '2023-08-08T12:00:00Z'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+  /non-spatial-table-metadata:
+    get:
+      summary: Retrieve non-spatial table metadata
+      description: Retrieve non-spatial table metadata.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - Name: Sample Table
+                  Abstract: A sample non-spatial table
+                  Author: Jane Smith
+                  Keywords: sample, table
+                  LastUpdated: '2023-08-08T12:00:00Z'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+  /gis-query:
+    post:
+      summary: Execute a GIS Query
+      description: Execute GIS feature or attribute query operations interactively or through predefined expressions.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GISQuery'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - QueryType: Attribute Query
+                  QueryStatus: Success
+                  TimeStamp: '2023-08-08T12:00:00Z'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal Server Error
+  /locational-query:
+    post:
+      summary: Execute a Locational Query
+      description: Execute a spatial query based on location.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LocationalQuery'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - QueryType: Locational Query
+                  QueryStatus: Success
+                  TimeStamp: '2023-08-08T12:00:00Z'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal Server Error
+  /attribute-query:
+    post:
+      summary: Execute an Attribute Query
+      description: Execute an attribute-based query.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AttributeQuery'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - QueryType: Attribute Query
+                  QueryStatus: Success
+                  TimeStamp: '2023-08-08T12:00:00Z'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal Server Error
+  /discovery-query:
+    post:
+      summary: Execute a Discovery Query
+      description: Execute a metadata discovery query.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DiscoveryQuery'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - QueryType: Metadata Discovery Query
+                  QueryStatus: Success
+                  TimeStamp: '2023-08-08T12:00:00Z'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal Server Error
+  /query-result:
+    get:
+      summary: Retrieve Query Results
+      description: Retrieve the results of a previously executed query.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - QueryType: Attribute Query
+                  QueryStatus: Success
+                  TimeStamp: '2023-08-08T12:00:00Z'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal Server Error
+
+components:
+  schemas:
+    LayerMetadata:
+      type: object
+      properties:
+        Name:
+          type: string
+        Abstract:
+          type: string
+        Author:
+          type: string
+        Geometry:
+          type: string
+        Keywords:
+          type: string
+        Snippet:
+          type: object
+        SpatialExtent:
+          type: array
+          items:
+            type: array
+            items:
+              type: number
+        LastUpdated:
+          type: string
+          format: date-time
+
+    NonSpatialTableMetadata:
+      type: object
+      properties:
+        Name:
+          type: string
+        Abstract:
+          type: string
+        Author:
+          type: string
+        Keywords:
+          type: string
+        LastUpdated:
+          type: string
+          format: date-time
+
+    GISQuery:
+      type: object
+      properties:
+        Type:
+          type: string
+        QueryFormat:
+          type: string
+        QueryString:
+          type: string
+        TimeStamp:
+          type: string
+          format: date-time
+        Name:
+          type: string
+
+    LocationalQuery:
+      type: object
+      properties:
+        LayerType:
+          type: string
+        SpatialRelation:
+          type: string
+        Longitude:
+          type: number
+        Latitude:
+          type: number
+        Distance:
+          type: number
+
+    AttributeQuery:
+      type: object
+      properties:
+        AttributeName:
+          type: string
+        Operator:
+          type: string
+        Value:
+          type: string
+
+    DiscoveryQuery:
+      type: object
+      properties:
+        AttributeName:
+          type: string
+
+    QueryResult:
+      type: object
+      properties:
+        QueryType:
+          type: string
+        QueryStatus:
+          type: string
+        TimeStamp:
+          type: string
+          format: date-time

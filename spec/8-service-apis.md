@@ -49,3 +49,31 @@ The [GovStack non-functional requirements document](https://govstack.gitbook.io/
 {% endswagger %}
 
 ### 8.2 GIS Query&#x20;
+
+{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml" path="/layer-metadata" method="get" %}
+[TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml" path="/non-spatial-table-metadata" method="get" %}
+[TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml" path="/gis-query" method="post" %}
+[TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml" path="/locational-query" method="post" %}
+[TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml" path="/attribute-query" method="post" %}
+[TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml" path="/discovery-query" method="post" %}
+[TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml" path="/query-result" method="get" %}
+[TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml)
+{% endswagger %}
