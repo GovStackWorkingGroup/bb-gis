@@ -1,0 +1,326 @@
+---
+openapi: 3.1.0
+info:
+  title: GIS Data Management API
+  version: 1.0.0
+servers:
+- url: "https://host/{version}/GIS_BB/DataManagement"
+  variables:
+    version:
+      description: API version
+      default: v1
+paths:
+  /data-store:
+    post:
+      summary: Create a GIS Data Store
+      description: Create a new GIS data store.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Name:
+                  type: string
+                Description:
+                  type: string
+                Provider:
+                  type: string
+                ConnectionString:
+                  type: string
+                AccessRestrictions:
+                  type: boolean
+                UpdateFrequency:
+                  type: string
+      responses:
+        "201":
+          description: Created
+        "400":
+          description: Bad Request
+  /data-store/{dataStoreId}:
+    get:
+      summary: Retrieve Data Store by ID
+      description: Retrieve details of a specific GIS data store.
+      parameters:
+      - name: dataStoreId
+        in: path
+        description: ID of the GIS data store to retrieve
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad Request
+        "404":
+          description: Not Found
+    patch:
+      summary: Update Data Store by ID
+      description: Update details of a specific GIS data store.
+      parameters:
+      - name: dataStoreId
+        in: path
+        description: ID of the GIS data store to update
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Name:
+                  type: string
+                Description:
+                  type: string
+                Provider:
+                  type: string
+                ConnectionString:
+                  type: string
+                AccessRestrictions:
+                  type: boolean
+                UpdateFrequency:
+                  type: string
+              minProperties: 1
+      responses:
+        "200":
+          description: Updated
+        "400":
+          description: Bad Request
+        "404":
+          description: Not Found
+  /data-store-metadata:
+    post:
+      summary: Publish Data Store Metadata
+      description: Publish metadata descriptions of a GIS database schema and its contents.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Name:
+                  type: string
+                Source:
+                  type: string
+                Description:
+                  type: string
+                Keywords:
+                  type: string
+                LastUpdated:
+                  type: string
+                  format: date-time
+      responses:
+        "201":
+          description: Created
+        "400":
+          description: Bad Request
+  /user-control:
+    post:
+      summary: Create User Control
+      description: Create user control for authentication and access permissions.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Username:
+                  type: string
+                Password:
+                  type: string
+                EditorPermissions:
+                  type: string
+                EditorTracking:
+                  type: boolean
+                OwnerControl:
+                  type: boolean
+      responses:
+        "201":
+          description: Created
+        "400":
+          description: Bad Request
+  /editor-tracking:
+    post:
+      summary: Record Editor Tracking
+      description: Record editor tracking information for feature editing.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                EditType:
+                  type: string
+                TimeStamp:
+                  type: string
+                  format: date-time
+      responses:
+        "201":
+          description: Created
+        "400":
+          description: Bad Request
+  /replicate:
+    post:
+      summary: Replicate GIS Data Store
+      description: Replicate a remote GIS database schema.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                SourceDataStore:
+                  type: string
+                TargetDataStore:
+                  type: string
+                ReplicaType:
+                  type: string
+      responses:
+        "201":
+          description: Created
+        "400":
+          description: Bad Request
+  /extract-transfer:
+    post:
+      summary: Extract and Transfer GIS Data
+      description: Extract and transfer GIS data layers or features from a remote GIS database.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                SourceDataStore:
+                  type: string
+                TargetDataStore:
+                  type: string
+      responses:
+        "201":
+          description: Created
+        "400":
+          description: Bad Request
+  /edit-feature:
+    post:
+      summary: Edit Geographic Features
+      description: "Create, edit, modify, or delete geographic features on the extracted GIS data layers."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                LayerType:
+                  type: string
+                FeatureID:
+                  type: string
+                Operation:
+                  type: string
+      responses:
+        "201":
+          description: Created
+        "400":
+          description: Bad Request
+components:
+  schemas:
+    DataStore:
+      type: object
+      properties:
+        Name:
+          type: string
+        Description:
+          type: string
+        Provider:
+          type: string
+        ConnectionString:
+          type: string
+        AccessRestrictions:
+          type: boolean
+        UpdateFrequency:
+          type: string
+    PartialDataStore:
+      type: object
+      properties:
+        Name:
+          type: string
+        Description:
+          type: string
+        Provider:
+          type: string
+        ConnectionString:
+          type: string
+        AccessRestrictions:
+          type: boolean
+        UpdateFrequency:
+          type: string
+      minProperties: 1
+    DataStoreMetadata:
+      type: object
+      properties:
+        Name:
+          type: string
+        Source:
+          type: string
+        Description:
+          type: string
+        Keywords:
+          type: string
+        LastUpdated:
+          type: string
+          format: date-time
+    UserControl:
+      type: object
+      properties:
+        Username:
+          type: string
+        Password:
+          type: string
+        EditorPermissions:
+          type: string
+        EditorTracking:
+          type: boolean
+        OwnerControl:
+          type: boolean
+    EditorTracking:
+      type: object
+      properties:
+        EditType:
+          type: string
+        TimeStamp:
+          type: string
+          format: date-time
+    Replication:
+      type: object
+      properties:
+        SourceDataStore:
+          type: string
+        TargetDataStore:
+          type: string
+        ReplicaType:
+          type: string
+    ExtractTransfer:
+      type: object
+      properties:
+        SourceDataStore:
+          type: string
+        TargetDataStore:
+          type: string
+    EditFeature:
+      type: object
+      properties:
+        LayerType:
+          type: string
+        FeatureID:
+          type: string
+        Operation:
+          type: string

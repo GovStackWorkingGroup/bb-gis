@@ -77,3 +77,41 @@ The [GovStack non-functional requirements document](https://govstack.gitbook.io/
 {% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml" path="/query-result" method="get" %}
 [TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml)
 {% endswagger %}
+
+### 8.3 GIS Data Management&#x20;
+
+{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/data-store" method="post" %}
+[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/data-store/{dataStoreId}" method="get" %}
+[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/data-store/{dataStoreId}" method="patch" %}
+[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/data-store-metadata" method="post" %}
+[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/user-control" method="post" %}
+[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/editor-tracking" method="post" %}
+[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/replicate" method="post" %}
+[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/extract-transfer" method="post" %}
+[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/edit-feature" method="post" %}
+[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% endswagger %}
