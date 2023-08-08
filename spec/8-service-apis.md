@@ -220,4 +220,56 @@ The [GovStack non-functional requirements document](https://govstack.gitbook.io/
 
 ### 8.7 Geofencing
 
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences" method="get" %}
+[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences" method="post" %}
+[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}" method="get" %}
+[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}" method="put" %}
+[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}" method="delete" %}
+[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}/status" method="get" %}
+[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}/activate" method="post" %}
+[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}/deactivate" method="post" %}
+[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}/elements" method="get" %}
+[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}/elements" method="post" %}
+[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}/elements/{elementId}" method="delete" %}
+[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}/rules" method="post" %}
+[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}/elements/{elementId}/actions" method="post" %}
+[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% endswagger %}
+
 ### 8.8 Routing

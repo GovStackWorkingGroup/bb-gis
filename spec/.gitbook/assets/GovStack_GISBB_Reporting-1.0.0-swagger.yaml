@@ -3,7 +3,7 @@ info:
   title: GIS Reporting API
   version: 1.0.0
 servers:
-  - url: https://host/{version}/GIS_BB/Geocoding_ReverseGeocoding
+  - url: https://host/{version}/GIS_BB/Reporting
     variables:
       version:
         description: API version
