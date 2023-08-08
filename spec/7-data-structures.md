@@ -114,7 +114,7 @@ The diagram below illustrates the proposed resource model that demonstrates the 
 
 #### **AddressData**
 
-<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Address</td><td>String</td><td>Address information for geocoding or reverse geocoding.</td><td></td></tr><tr><td>Latitude</td><td>Real</td><td>Latitude coordinate for the address </td><td>Used for Reverse Geocoding</td></tr><tr><td>Longitude</td><td>Real</td><td>Longitude coordinate for the address </td><td>Used for Reverse Geocoding</td></tr></tbody></table>
+<table><thead><tr><th width="206">Field</th><th>Type</th><th width="205">Description</th><th>Notes</th></tr></thead><tbody><tr><td>Address</td><td>String</td><td>Address information for geocoding or reverse geocoding.</td><td></td></tr><tr><td>Longitude</td><td>Real</td><td>Longitude coordinate for the address </td><td>Used for Reverse Geocoding</td></tr><tr><td>Latitude</td><td>Real</td><td>Latitude coordinate for the address </td><td>Used for Reverse Geocoding</td></tr></tbody></table>
 
 #### **AddressAlias**
 
