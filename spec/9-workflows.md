@@ -203,3 +203,50 @@ sequenceDiagram
   Note over GISQueryAPI: Execute discovery query with keywords and get results
 
 ```
+
+#### 9.2.1  Example 1: Cadastre User Discovery Query for Privately Owned Land
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-09-115114.png" alt=""><figcaption></figcaption></figure>
+
+```mermaid
+sequenceDiagram
+  participant ExternalApp as "Cadastre User"
+  participant GISQueryAPI as "GISQuery API"
+  participant DataStore as "Data Store"
+
+  ExternalApp ->> GISQueryAPI: Execute Discovery Query
+  GISQueryAPI ->> DataStore: Execute Discovery Query with Keywords
+  DataStore -->> GISQueryAPI: Provide Query Results
+  GISQueryAPI -->> ExternalApp: Provide Query Results
+
+  Note over GISQueryAPI: Execute discovery query with keywords\nKeywords: privately owned land
+  Note over DataStore: Process the discovery query and retrieve results\nResults: List of parcels with privately owned land
+  
+  ExternalApp ->> GISQueryAPI: Retrieve Query Results
+  GISQueryAPI -->> ExternalApp: Provide Query Results
+
+  Note over ExternalApp: Receive query results\nQuery Results: List of parcels with privately owned land
+
+```
+
+#### 9.2.2  Example 2: Locational Query for Landmarks near Incident Location
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-09-120000.png" alt=""><figcaption></figcaption></figure>
+
+```mermaid
+sequenceDiagram
+  participant ExternalApp as "External Application"
+  participant GISQueryAPI as "GISQuery API"
+  participant DataStore as "Data Store"
+
+  ExternalApp ->> GISQueryAPI: Initiate Locational Query
+  GISQueryAPI ->> DataStore: Retrieve Incident Location
+  DataStore -->> GISQueryAPI: Provide Incident Location
+  Note over GISQueryAPI: Incident Location: Longitude: -122.1234 Latitude: 45.6789
+  GISQueryAPI ->> DataStore: Execute Locational Query for Landmarks
+  DataStore -->> GISQueryAPI: Provide Landmarks within 1 KM
+  Note over DataStore: Query results (map and table) showing Landmarks within 1 KM of Incident and relevat attributes such as name, type, etc.
+  GISQueryAPI -->> ExternalApp: Provide Locational Query Results
+
+```
+
