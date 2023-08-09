@@ -132,7 +132,7 @@ sequenceDiagram
 
 #### 9.1.2  Example 2: Emergency Dispatcher: Accident Location Bookmarking and Map Note Addition
 
-<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-09-135106.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-09-135921.png" alt=""><figcaption></figcaption></figure>
 
 ```mermaid
 sequenceDiagram
@@ -145,7 +145,7 @@ sequenceDiagram
   DataStore -->> MapDisplayAPI: Provide Accident Location Data
   MapDisplayAPI ->> Dispatcher: Provide Accident Location Data
 
-  Note over MapDisplayAPI: Accident Location Details\nLatitude: 40.7128\nLongitude: -74.0060
+  Note over MapDisplayAPI: Accident Location Details Latitude: 40.7128 Longitude: -74.0060
 
   Dispatcher ->> MapDisplayAPI: Bookmark Accident Location
   MapDisplayAPI ->> DataStore: Save Bookmark
@@ -160,5 +160,4 @@ sequenceDiagram
   MapDisplayAPI -->> Dispatcher: Note Added
 
   Note over MapDisplayAPI: Accident Type: Vehicle Collision
-
 ```
