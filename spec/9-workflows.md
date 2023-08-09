@@ -96,6 +96,69 @@ sequenceDiagram
   Note over MapDisplayAPI: MapDisplayAPI provides data viewer style
 ```
 
-#### 9.1.2  Example 1: Cadastral User Displaying Land Use and Title Layers with Parcel Zoom
+#### 9.1.1  Example 1: Cadastral User Displaying Land Use and Title Layers with Parcel Zoom
+
+
 
 <figure><img src=".gitbook/assets/mermaid-diagram-2023-08-09-132625.png" alt=""><figcaption></figcaption></figure>
+
+```mermaid
+sequenceDiagram
+  participant ExternalApp as "Cadastral User"
+  participant MapDisplayAPI as "MapDisplay API"
+  participant DataStore as "Data Store"
+
+  ExternalApp ->> MapDisplayAPI: Request Map Display Details
+  MapDisplayAPI ->> ExternalApp: Provide Map Display Details
+  Note over MapDisplayAPI: Title: Cadastral Map\nAttribution: Cadastral Department\nCenter: 45.6789, -123.4567\nBounds: 45.1234, -124.5678 to 46.7890, -122.3456\nVisible Layers: Land Use, Titles
+
+  ExternalApp ->> MapDisplayAPI: Request Land Use Layer
+  MapDisplayAPI ->> DataStore: Retrieve Land Use Data
+  DataStore -->> MapDisplayAPI: Provide Land Use Layer Data
+  MapDisplayAPI ->> ExternalApp: Provide Land Use Layer Data
+  Note over MapDisplayAPI: Land Use Layer Data\nExample: { "type": "FeatureCollection", "features": [ ... ] }
+
+  ExternalApp ->> MapDisplayAPI: Request Title Records Layer
+  MapDisplayAPI ->> DataStore: Retrieve Title Records Data
+  DataStore -->> MapDisplayAPI: Provide Title Records Layer Data
+  MapDisplayAPI ->> ExternalApp: Provide Title Records Layer Data
+  Note over MapDisplayAPI: Title Records Layer Data\nExample: { "type": "FeatureCollection", "features": [ ... ] }
+
+  ExternalApp ->> MapDisplayAPI: Zoom to Parcel
+  MapDisplayAPI -->> ExternalApp: Parcel Zoomed In
+  Note over MapDisplayAPI: Zoomed to Parcel ID: 12345
+
+```
+
+#### 9.1.2  Example 2: Emergency Dispatcher: Accident Location Bookmarking and Map Note Addition
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-09-135106.png" alt=""><figcaption></figcaption></figure>
+
+```mermaid
+sequenceDiagram
+  participant Dispatcher as "Emergency Dispatcher"
+  participant MapDisplayAPI as "MapDisplay API"
+  participant DataStore as "Data Store"
+
+  Dispatcher ->> MapDisplayAPI: Request Accident Location
+  MapDisplayAPI ->> DataStore: Retrieve Accident Location Data
+  DataStore -->> MapDisplayAPI: Provide Accident Location Data
+  MapDisplayAPI ->> Dispatcher: Provide Accident Location Data
+
+  Note over MapDisplayAPI: Accident Location Details\nLatitude: 40.7128\nLongitude: -74.0060
+
+  Dispatcher ->> MapDisplayAPI: Bookmark Accident Location
+  MapDisplayAPI ->> DataStore: Save Bookmark
+  DataStore -->> MapDisplayAPI: Bookmark Saved
+  MapDisplayAPI -->> Dispatcher: Bookmark Created
+
+  Note over MapDisplayAPI: Bookmark: Accident Location
+
+  Dispatcher ->> MapDisplayAPI: Add Note about Accident Type
+  MapDisplayAPI ->> DataStore: Save Note
+  DataStore -->> MapDisplayAPI: Note Saved
+  MapDisplayAPI -->> Dispatcher: Note Added
+
+  Note over MapDisplayAPI: Accident Type: Vehicle Collision
+
+```
