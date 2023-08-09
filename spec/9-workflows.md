@@ -18,7 +18,7 @@ The following internal workflows describe the processes the GIS Building Block e
 
 #### 9.1.1 Interactions between an external application or a Building Block and the MapDisplay API with data store integration
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-09-114409.png" alt=""><figcaption></figcaption></figure>
 
 ```mermaid
 sequenceDiagram
@@ -96,11 +96,9 @@ sequenceDiagram
   Note over MapDisplayAPI: MapDisplayAPI provides data viewer style
 ```
 
-#### 9.1.1  Example 1: Cadastral User Displaying Land Use and Title Layers with Parcel Zoom
+#### 9.1.2  Example 1: Cadastral User Displaying Land Use and Title Layers with Parcel Zoom
 
-
-
-<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-09-132625.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-09-114215.png" alt=""><figcaption></figcaption></figure>
 
 ```mermaid
 sequenceDiagram
@@ -130,9 +128,9 @@ sequenceDiagram
 
 ```
 
-#### 9.1.2  Example 2: Emergency Dispatcher: Accident Location Bookmarking and Map Note Addition
+#### 9.1.3  Example 2: Emergency Dispatcher: Accident Location Bookmarking and Map Note Addition
 
-<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-09-135921.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-09-113807.png" alt=""><figcaption></figcaption></figure>
 
 ```mermaid
 sequenceDiagram
@@ -160,4 +158,48 @@ sequenceDiagram
   MapDisplayAPI -->> Dispatcher: Note Added
 
   Note over MapDisplayAPI: Accident Type: Vehicle Collision
+```
+
+### 9.2 GIS Query
+
+#### 9.2.1 Interactions between an external application or a Building Block and the GISQuery API with data store integration
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-09-113525.png" alt=""><figcaption></figcaption></figure>
+
+```mermaid
+sequenceDiagram
+  participant ExternalApp as "External Application"
+  participant GISQueryAPI as "GISQuery API"
+  participant DataStore as "Data Store"
+
+  ExternalApp ->> GISQueryAPI: Request GIS Layer Metadata
+  GISQueryAPI ->> DataStore: Retrieve GIS Layer Metadata
+  DataStore -->> GISQueryAPI: Provide GIS Layer Metadata
+  GISQueryAPI -->> ExternalApp: Provide GIS Layer Metadata
+  Note over GISQueryAPI: Retrieve metadata for GIS layers and send to External App
+
+  ExternalApp ->> GISQueryAPI: Execute GIS Query
+  GISQueryAPI ->> DataStore: Execute GIS Query
+  DataStore -->> GISQueryAPI: Provide Query Results
+  GISQueryAPI -->> ExternalApp: Provide Query Results
+  Note over GISQueryAPI: Execute GIS query and get results
+
+  ExternalApp ->> GISQueryAPI: Execute Locational Query
+  GISQueryAPI ->> DataStore: Execute Locational Query
+  DataStore -->> GISQueryAPI: Provide Query Results
+  GISQueryAPI -->> ExternalApp: Provide Query Results
+  Note over GISQueryAPI: Execute locational query and get results
+
+  ExternalApp ->> GISQueryAPI: Execute Attribute Query
+  GISQueryAPI ->> DataStore: Execute Attribute Query
+  DataStore -->> GISQueryAPI: Provide Query Results
+  GISQueryAPI -->> ExternalApp: Provide Query Results
+  Note over GISQueryAPI: Execute attribute query and get results
+
+  ExternalApp ->> GISQueryAPI: Execute Discovery Query
+  GISQueryAPI ->> DataStore: Execute Discovery Query with Keywords
+  DataStore -->> GISQueryAPI: Provide Query Results
+  GISQueryAPI -->> ExternalApp: Provide Query Results
+  Note over GISQueryAPI: Execute discovery query with keywords and get results
+
 ```
