@@ -321,19 +321,7 @@ sequenceDiagram
 
 #### 9.3.2  Example 1: Editing Land Parcel information
 
-<div>
-
-<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-12-122454.png" alt=""><figcaption></figcaption></figure>
-
- 
-
-<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-12-121817 (1).png" alt=""><figcaption></figcaption></figure>
-
- 
-
-<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-12-121620.png" alt=""><figcaption></figcaption></figure>
-
-</div>
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-12-122454 (1).png" alt=""><figcaption></figcaption></figure>
 
 ```mermaid
 sequenceDiagram
@@ -363,4 +351,63 @@ sequenceDiagram
 
 ### 9.4 GeoCoding and Reservse GeoCoding
 
-#### 9.4.1&#x20;
+#### 9.4.1 Geocoding and Reverse Geocoding API Integration with Data Store
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-12-124439.png" alt=""><figcaption></figcaption></figure>
+
+```mermaid
+sequenceDiagram
+  participant ExternalApp as "External Application"
+  participant GeocodingAPI as "Geocoding API"
+  participant DataStore as "Address Table / Gazetteer"
+
+  ExternalApp ->> GeocodingAPI: Request Geocode an Address
+  GeocodingAPI ->> DataStore: Process Address Data
+  DataStore -->> GeocodingAPI: Geocoding Result
+  GeocodingAPI -->> ExternalApp: Response - Geocoding Result
+
+  ExternalApp ->> GeocodingAPI: Request Reverse Geocode Coordinates
+  GeocodingAPI ->> DataStore: Process Coordinates
+  DataStore -->> GeocodingAPI: Reverse Geocoding Result
+  GeocodingAPI -->> ExternalApp: Response - Reverse Geocoding Result
+
+  ExternalApp ->> GeocodingAPI: Request Batch Geocode
+  GeocodingAPI ->> DataStore: Process Batch Data
+  DataStore -->> GeocodingAPI: Batch Geocoding Result
+  GeocodingAPI -->> ExternalApp: Response - Batch Geocoding Result
+
+  ExternalApp ->> GeocodingAPI: Request Geocode Result by ID
+  GeocodingAPI ->> DataStore: Retrieve Geocode Result by ID
+  DataStore -->> GeocodingAPI: Geocode Result Details
+  GeocodingAPI -->> ExternalApp: Response - Geocode Result Details
+
+  ExternalApp ->> GeocodingAPI: Request Reverse Geocode Result by ID
+  GeocodingAPI ->> DataStore: Retrieve Reverse Geocode Result by ID
+  DataStore -->> GeocodingAPI: Reverse Geocode Result Details
+  GeocodingAPI -->> ExternalApp: Response - Reverse Geocode Result Details
+
+```
+
+#### 9.4.2 Reverse Geocoding of Incident Dispatcher's Landmark Coordinates
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-12-125208.png" alt=""><figcaption></figcaption></figure>
+
+```mermaid
+sequenceDiagram
+  participant ExternalApp as "Incident Dispatcher"
+  participant GeocodingAPI as "Geocoding API"
+  participant DataStore as "Data Store (Address Table)"
+
+  ExternalApp ->> GeocodingAPI: Request to Reverse Geocode Coordinates
+  Note over GeocodingAPI: Example Request: {"Latitude": 34.0522, "Longitude": -118.2437}
+  GeocodingAPI ->> DataStore: Retrieve Address Data
+  DataStore -->> GeocodingAPI: Example Address Data: {"Address": "123 Freedom St", "Latitude": 34.0522, "Longitude": -118.2437}
+  GeocodingAPI -->> ExternalApp: Response - Address Data Found
+
+  ExternalApp ->> GeocodingAPI: Provide Coordinates (Latitude, Longitude)
+  Note over ExternalApp: Example Coordinates: Latitude: 34.0522, Longitude: -118.2437
+  GeocodingAPI ->> DataStore: Process Reverse Geocoding
+  DataStore -->> GeocodingAPI: Reverse Geocoded Address: 123 Freedom St
+  GeocodingAPI -->> ExternalApp: Response - Reverse Geocoded Address
+
+```
