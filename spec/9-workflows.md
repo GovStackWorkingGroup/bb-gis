@@ -204,7 +204,7 @@ sequenceDiagram
 
 ```
 
-#### 9.2.1  Example 1: Cadastre User Discovery Query for Privately Owned Land
+#### 9.2.2  Example 1: Cadastre User Discovery Query for Privately Owned Land
 
 <figure><img src=".gitbook/assets/mermaid-diagram-2023-08-09-115114.png" alt=""><figcaption></figcaption></figure>
 
@@ -229,7 +229,7 @@ sequenceDiagram
 
 ```
 
-#### 9.2.2  Example 2: Locational Query for Landmarks near Incident Location
+#### 9.2.3  Example 2: Locational Query for Landmarks near Incident Location
 
 <figure><img src=".gitbook/assets/mermaid-diagram-2023-08-09-120000.png" alt=""><figcaption></figcaption></figure>
 
@@ -250,3 +250,117 @@ sequenceDiagram
 
 ```
 
+### 9.3 GIS Data Management
+
+#### 9.3.1 Interactions between an external application or a Building Block and the GIS DataManagement API with data store integration
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-12-122638.png" alt=""><figcaption></figcaption></figure>
+
+```mermaid
+sequenceDiagram
+  participant ExternalApp as "External Application"
+  participant DataManagementAPI as "DataManagement API"
+  participant DataStore as "Data Store"
+
+  ExternalApp ->> DataManagementAPI: Request to Create Data Store
+  DataManagementAPI ->> DataStore: Create Data Store
+  DataStore -->> DataManagementAPI: Data Store Created
+  DataManagementAPI -->> ExternalApp: Response - Data Store Created
+
+  ExternalApp ->> DataManagementAPI: Request to Retrieve Data Store by ID
+  DataManagementAPI ->> DataStore: Retrieve Data Store
+  DataStore -->> DataManagementAPI: Data Store Details
+  DataManagementAPI -->> ExternalApp: Response - Data Store Details
+
+  ExternalApp ->> DataManagementAPI: Request to Update Data Store by ID
+  DataManagementAPI ->> DataStore: Update Data Store
+  DataStore -->> DataManagementAPI: Data Store Updated
+  DataManagementAPI -->> ExternalApp: Response - Data Store Updated
+
+  ExternalApp ->> DataManagementAPI: Publish Data Store Metadata
+  DataManagementAPI ->> DataStore: Publish Data Store Metadata
+  DataStore -->> DataManagementAPI: Data Store Metadata Published
+  DataManagementAPI -->> ExternalApp: Response - Data Store Metadata Published
+
+  ExternalApp ->> DataManagementAPI: Create User Control
+  DataManagementAPI ->> DataStore: Create User Control
+  DataStore -->> DataManagementAPI: User Control Created
+  DataManagementAPI -->> ExternalApp: Response - User Control Created
+
+  ExternalApp ->> DataManagementAPI: Record Editor Tracking
+  DataManagementAPI ->> DataStore: Record Editor Tracking
+  DataStore -->> DataManagementAPI: Editor Tracking Recorded
+  DataManagementAPI -->> ExternalApp: Response - Editor Tracking Recorded
+
+  ExternalApp ->> DataManagementAPI: Create Data Store Replica
+  DataManagementAPI ->> DataStore: Create Data Store Replica
+  DataStore -->> DataManagementAPI: Data Store Replica Created
+  DataManagementAPI -->> ExternalApp: Response - Data Store Replica Created
+
+  ExternalApp ->> DataManagementAPI: Extract and Transfer GIS Data
+  DataManagementAPI ->> DataStore: Extract and Transfer GIS Data
+  DataStore -->> DataManagementAPI: GIS Data Extracted and Transferred
+  DataManagementAPI -->> ExternalApp: Response - GIS Data Extracted and Transferred
+
+  ExternalApp ->> DataManagementAPI: Edit Geographic Features
+  DataManagementAPI ->> DataStore: Edit Geographic Features
+  DataStore -->> DataManagementAPI: Geographic Features Edited
+  DataManagementAPI -->> ExternalApp: Response - Geographic Features Edited
+
+  ExternalApp ->> DataManagementAPI: Request to Create Data Store Version
+  DataManagementAPI ->> DataStore: Create Data Store Version
+  DataStore -->> DataManagementAPI: Data Store Version Created
+  DataManagementAPI -->> ExternalApp: Response - Data Store Version Created
+
+  ExternalApp ->> DataManagementAPI: Request to Synchronize Data Store Content
+  DataManagementAPI ->> DataStore: Synchronize Data Store Content
+  DataStore -->> DataManagementAPI: Data Store Content Synchronized
+  DataManagementAPI -->> ExternalApp: Response - Data Store Content Synchronized
+
+```
+
+#### 9.3.2  Example 1: Editing Land Parcel information
+
+<div>
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-12-122454.png" alt=""><figcaption></figcaption></figure>
+
+ 
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-12-121817 (1).png" alt=""><figcaption></figcaption></figure>
+
+ 
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-12-121620.png" alt=""><figcaption></figcaption></figure>
+
+</div>
+
+```mermaid
+sequenceDiagram
+  participant LandUseCadastralUser as "Land Use Cadasteral User"
+  participant DataManagementAPI as "DataManagement API"
+  participant DataStore as "Data Store"
+
+  LandUseCadastralUser ->> DataManagementAPI: Request to Edit Geographic Features
+  DataManagementAPI ->> DataStore: Edit Geographic Features
+  DataStore -->> DataManagementAPI: Geographic Features Edited
+  DataManagementAPI -->> LandUseCadastralUser: Response - Geographic Features Edited
+  Note over DataManagementAPI: LayerType: Parcel FeatureID: P1234 Operation: Update Owner: John Doe
+
+  LandUseCadastralUser ->> DataManagementAPI: Request to Create Data Store Version
+  DataManagementAPI ->> DataStore: Create Data Store Version
+  DataStore -->> DataManagementAPI: Data Store Version Created
+  DataManagementAPI -->> LandUseCadastralUser: Response - Data Store Version Created
+  Note over DataManagementAPI: Name: LandUseUpdate_v2 Description: Land Use Update Version TimeStamp: 2023-08-08T12:00:00Z
+
+  LandUseCadastralUser ->> DataManagementAPI: Request to Synchronize Data Store Content
+  DataManagementAPI ->> DataStore: Synchronize Data Store Content
+  DataStore -->> DataManagementAPI: Data Store Content Synchronized
+  DataManagementAPI -->> LandUseCadastralUser: Response - Data Store Content Synchronized
+  Note over DataManagementAPI: SourceDataStore: MasterCadasteral TargetDataStore: LocalCadasteral
+
+```
+
+### 9.4 GeoCoding and Reservse GeoCoding
+
+#### 9.4.1&#x20;
