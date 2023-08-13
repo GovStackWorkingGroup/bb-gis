@@ -414,7 +414,7 @@ sequenceDiagram
 
 ### 9.5 Spatial Awareness and Analysis
 
-#### 9.5.1 Interactions between an external application or a Building Block and the patialAwarenessAndAnalysis API with data store integration&#x20;
+#### 9.5.1 Interactions between an external application or a Building Block and the SpatialAwarenessAndAnalysis API with data store integration&#x20;
 
 <figure><img src=".gitbook/assets/mermaid-diagram-2023-08-13-115538.png" alt=""><figcaption></figcaption></figure>
 
@@ -552,3 +552,304 @@ sequenceDiagram
 
 ```
 
+### 9.6 GIS Reporting
+
+#### 9.6.1 Interactions between an external application or a Building Block and the GIS Reporting API with data store integration
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-13-122348.png" alt=""><figcaption></figcaption></figure>
+
+```mermaid
+sequenceDiagram
+  participant ExternalApp as "External Application"
+  participant GISReportingAPI as "GIS Reporting API"
+  participant DataStore as "Data Store"
+  participant MapDisplayAPI as "MapDisplay API"
+
+  ExternalApp ->> GISReportingAPI: Request to Get Templates
+  GISReportingAPI ->> DataStore: Retrieve Templates
+  DataStore -->> GISReportingAPI: Templates
+  GISReportingAPI -->> ExternalApp: Response - Templates
+
+  ExternalApp ->> GISReportingAPI: Request to Add Dynamic Layer
+  GISReportingAPI ->> DataStore: Add Dynamic Layer
+  DataStore -->> GISReportingAPI: Dynamic Layer Added
+  GISReportingAPI -->> ExternalApp: Response - Dynamic Layer Added
+
+  ExternalApp ->> GISReportingAPI: Request to Remove Dynamic Layer by ID
+  GISReportingAPI ->> DataStore: Remove Dynamic Layer
+  DataStore -->> GISReportingAPI: Dynamic Layer Removed
+  GISReportingAPI -->> ExternalApp: Response - Dynamic Layer Removed
+
+  ExternalApp ->> GISReportingAPI: Request to Add Label
+  GISReportingAPI ->> DataStore: Add Label
+  DataStore -->> GISReportingAPI: Label Added
+  GISReportingAPI -->> ExternalApp: Response - Label Added
+
+  ExternalApp ->> GISReportingAPI: Request to Remove Label by ID
+  GISReportingAPI ->> DataStore: Remove Label
+  DataStore -->> GISReportingAPI: Label Removed
+  GISReportingAPI -->> ExternalApp: Response - Label Removed
+
+  ExternalApp ->> GISReportingAPI: Request to Add Chart
+  GISReportingAPI ->> DataStore: Add Chart
+  DataStore -->> GISReportingAPI: Chart Added
+  GISReportingAPI -->> ExternalApp: Response - Chart Added
+
+  ExternalApp ->> GISReportingAPI: Request to Remove Chart by ID
+  GISReportingAPI ->> DataStore: Remove Chart
+  DataStore -->> GISReportingAPI: Chart Removed
+  GISReportingAPI -->> ExternalApp: Response - Chart Removed
+
+  ExternalApp ->> GISReportingAPI: Request to Add Legend
+  GISReportingAPI ->> DataStore: Add Legend
+  DataStore -->> GISReportingAPI: Legend Added
+  GISReportingAPI -->> ExternalApp: Response - Legend Added
+
+  ExternalApp ->> GISReportingAPI: Request to Remove Legend by ID
+  GISReportingAPI ->> DataStore: Remove Legend
+  DataStore -->> GISReportingAPI: Legend Removed
+  GISReportingAPI -->> ExternalApp: Response - Legend Removed
+
+  ExternalApp ->> GISReportingAPI: Request to Add Scale Bar
+  GISReportingAPI ->> DataStore: Add Scale Bar
+  DataStore -->> GISReportingAPI: Scale Bar Added
+  GISReportingAPI -->> ExternalApp: Response - Scale Bar Added
+
+  ExternalApp ->> GISReportingAPI: Request to Remove Scale Bar by ID
+  GISReportingAPI ->> DataStore: Remove Scale Bar
+  DataStore -->> GISReportingAPI: Scale Bar Removed
+  GISReportingAPI -->> ExternalApp: Response - Scale Bar Removed
+
+  ExternalApp ->> GISReportingAPI: Request to Add North Arrow
+  GISReportingAPI ->> DataStore: Add North Arrow
+  DataStore -->> GISReportingAPI: North Arrow Added
+  GISReportingAPI -->> ExternalApp: Response - North Arrow Added
+
+  ExternalApp ->> GISReportingAPI: Request to Remove North Arrow by ID
+  GISReportingAPI ->> DataStore: Remove North Arrow
+  DataStore -->> GISReportingAPI: North Arrow Removed
+  GISReportingAPI -->> ExternalApp: Response - North Arrow Removed
+
+  ExternalApp ->> MapDisplayAPI: Request to Display Map
+  MapDisplayAPI ->> GISReportingAPI: Get Map Layout
+  GISReportingAPI ->> DataStore: Retrieve Map Layout
+  DataStore -->> GISReportingAPI: Map Layout
+  GISReportingAPI -->> MapDisplayAPI: Map Layout
+  MapDisplayAPI -->> ExternalApp: Response - Map Displayed
+```
+
+### 9.7 Gefencing&#x20;
+
+#### 9.7.1 Interactions between an external application or a Building Block and the Geofencing API
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-13-122706.png" alt=""><figcaption></figcaption></figure>
+
+```mermaid
+sequenceDiagram
+  participant ExternalApp as "External Application"
+  participant GeofencingAPI as "Geofencing API"
+  participant DataStore as "Data Store"
+
+  ExternalApp ->> GeofencingAPI: Request to List Geofences
+  GeofencingAPI ->> DataStore: Retrieve List of Geofences
+  DataStore -->> GeofencingAPI: List of Geofences
+  GeofencingAPI -->> ExternalApp: Response - List of Geofences
+
+  ExternalApp ->> GeofencingAPI: Request to Create Geofence
+  GeofencingAPI ->> DataStore: Create Geofence
+  DataStore -->> GeofencingAPI: Geofence Created
+  GeofencingAPI -->> ExternalApp: Response - Geofence Created
+
+  ExternalApp ->> GeofencingAPI: Request to Get Geofence by ID
+  GeofencingAPI ->> DataStore: Retrieve Geofence by ID
+  DataStore -->> GeofencingAPI: Geofence Details
+  GeofencingAPI -->> ExternalApp: Response - Geofence Details
+
+  ExternalApp ->> GeofencingAPI: Request to Update Geofence by ID
+  GeofencingAPI ->> DataStore: Update Geofence
+  DataStore -->> GeofencingAPI: Geofence Updated
+  GeofencingAPI -->> ExternalApp: Response - Geofence Updated
+
+  ExternalApp ->> GeofencingAPI: Request to Delete Geofence by ID
+  GeofencingAPI ->> DataStore: Delete Geofence
+  DataStore -->> GeofencingAPI: Geofence Deleted
+  GeofencingAPI -->> ExternalApp: Response - Geofence Deleted
+
+  ExternalApp ->> GeofencingAPI: Request to Get Geofence Status
+  GeofencingAPI ->> DataStore: Retrieve Geofence Status
+  DataStore -->> GeofencingAPI: Geofence Status
+  GeofencingAPI -->> ExternalApp: Response - Geofence Status
+
+  ExternalApp ->> GeofencingAPI: Request to Activate Geofence
+  GeofencingAPI ->> DataStore: Activate Geofence
+  DataStore -->> GeofencingAPI: Geofence Activated
+  GeofencingAPI -->> ExternalApp: Response - Geofence Activated
+
+  ExternalApp ->> GeofencingAPI: Request to Deactivate Geofence
+  GeofencingAPI ->> DataStore: Deactivate Geofence
+  DataStore -->> GeofencingAPI: Geofence Deactivated
+  GeofencingAPI -->> ExternalApp: Response - Geofence Deactivated
+
+  ExternalApp ->> GeofencingAPI: Request to List Geofence Elements
+  GeofencingAPI ->> DataStore: Retrieve List of Geofence Elements
+  DataStore -->> GeofencingAPI: List of Geofence Elements
+  GeofencingAPI -->> ExternalApp: Response - List of Geofence Elements
+
+  ExternalApp ->> GeofencingAPI: Request to Add Geofence Element
+  GeofencingAPI ->> DataStore: Add Geofence Element
+  DataStore -->> GeofencingAPI: Geofence Element Added
+  GeofencingAPI -->> ExternalApp: Response - Geofence Element Added
+
+  ExternalApp ->> GeofencingAPI: Request to Remove Geofence Element
+  GeofencingAPI ->> DataStore: Remove Geofence Element
+  DataStore -->> GeofencingAPI: Geofence Element Removed
+  GeofencingAPI -->> ExternalApp: Response - Geofence Element Removed
+
+  ExternalApp ->> GeofencingAPI: Request to Create Action Rule for Geofence
+  GeofencingAPI ->> DataStore: Create Action Rule
+  DataStore -->> GeofencingAPI: Action Rule Created
+  GeofencingAPI -->> ExternalApp: Response - Action Rule Created
+
+  ExternalApp ->> GeofencingAPI: Request to Create Element Action Rule for Geofence
+  GeofencingAPI ->> DataStore: Create Element Action Rule
+  DataStore -->> GeofencingAPI: Element Action Rule Created
+  GeofencingAPI -->> ExternalApp: Response - Element Action Rule Created
+
+```
+
+#### 9.7.2 Example: Geofencing API Usage for Redlining Emergency Operation
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-13-123243.png" alt=""><figcaption></figcaption></figure>
+
+```mermaid
+sequenceDiagram
+  participant Dispatcher as Emergency Dispatcher
+  participant GeofencingAPI as Geofencing API
+
+  Dispatcher->>GeofencingAPI: Create Geofence
+  Note over GeofencingAPI: Request: Create Geofence {"Name": "Emergency Zone", "Shape": "Polygon", "Size": 100, "Status": true}
+  GeofencingAPI->>Dispatcher: Response: Geofence created successfully
+
+  Dispatcher->>GeofencingAPI: Add Geofence Element
+  Note over GeofencingAPI: Request: Add Geofence Element {"ElementType": "Area", "TrackingMethod": "GPS"}
+  GeofencingAPI->>Dispatcher: Response: Geofence element added successfully
+
+  Dispatcher->>GeofencingAPI: Create Action Rule for Geofence
+  Note over GeofencingAPI: Request: Create Action Rule for Geofence {"ActionType": "Alert", "Action": "Notify Command Center"}
+  GeofencingAPI->>Dispatcher: Response: Action rule created successfully
+
+  Dispatcher->>GeofencingAPI: Create Element Action Rule for Geofence
+  Note over GeofencingAPI: Request: Create Element Action Rule {"NotificationType": "Alert", "Recipient": "Emergency Teams", "RecipientType": "Group"}
+  GeofencingAPI->>Dispatcher: Response: Element action rule created successfully
+
+  Dispatcher->>GeofencingAPI: Activate Geofence
+  Note over GeofencingAPI: Request: Activate Geofence {"geofenceId": "emergency-zone"}
+  GeofencingAPI->>Dispatcher: Response: Geofence activated successfully
+
+  Dispatcher->>GeofencingAPI: Get Geofence Status
+  Note over GeofencingAPI: Request: Get Geofence Status {"geofenceId": "emergency-zone"}
+  GeofencingAPI->>Dispatcher: Response: Geofence is currently active
+
+  Dispatcher->>GeofencingAPI: Get Geofence by ID
+  Note over GeofencingAPI: Request: Get Geofence by ID {"geofenceId": "emergency-zone"}
+  GeofencingAPI->>Dispatcher: Response: Details of the emergency zone geofence
+
+  Dispatcher->>GeofencingAPI: List Geofence Elements
+  Note over GeofencingAPI: Request: List Geofence Elements {"geofenceId": "emergency-zone"}
+  GeofencingAPI->>Dispatcher: Response: List of elements in the emergency zone geofence
+
+  Dispatcher->>GeofencingAPI: Create Element Action Rule for Geofence
+  Note over GeofencingAPI: Request: Create Element Action Rule {"NotificationType": "Alert", "Recipient": "Emergency Teams", "RecipientType": "Group"}
+  GeofencingAPI->>Dispatcher: Response: Element action rule created successfully
+
+  Dispatcher->>GeofencingAPI: Deactivate Geofence
+  Note over GeofencingAPI: Request: Deactivate Geofence {"geofenceId": "emergency-zone"}
+  GeofencingAPI->>Dispatcher: Response: Geofence deactivated successfully
+
+  Dispatcher->>GeofencingAPI: Remove Geofence Element
+  Note over GeofencingAPI: Request: Remove Geofence Element {"geofenceId": "emergency-zone", "elementId": "element-1"}
+  GeofencingAPI->>Dispatcher: Response: Geofence element removed successfully
+
+  Dispatcher->>GeofencingAPI: Remove Geofence
+  Note over GeofencingAPI: Request: Remove Geofence {"geofenceId": "emergency-zone"}
+  GeofencingAPI->>Dispatcher: Response: Geofence deleted successfully
+```
+
+### 9.8 Routing
+
+#### 9.8.1 Interactions between an external application or a Building Block and the Routing API
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-13-124542.png" alt=""><figcaption></figcaption></figure>
+
+```mermaid
+sequenceDiagram
+  participant ExternalApp as External Application/Building Block
+  participant API as Routing API
+  participant DataStore as Data Store
+
+  ExternalApp-->>API: Create Route
+  API-->>DataStore: Save Route Data
+  DataStore-->>API: Confirmation
+
+  ExternalApp-->>API: Get Route by ID
+  API-->>DataStore: Retrieve Route Data
+  DataStore-->>API: Route Details
+  API-->>ExternalApp: Route Details
+
+  ExternalApp-->>API: Delete Route
+  API-->>DataStore: Remove Route Data
+  DataStore-->>API: Confirmation
+  API-->>ExternalApp: Route Deleted
+
+  ExternalApp-->>API: Generate Direction Report for Route
+  API-->>DataStore: Retrieve Route Data
+  DataStore-->>API: Direction Report
+  API-->>ExternalApp: Direction Report
+
+  ExternalApp-->>API: List Route Segments
+  API-->>DataStore: Retrieve Route Data
+  DataStore-->>API: List of Route Segments
+  API-->>ExternalApp: List of Route Segments
+
+  ExternalApp-->>API: List Service Areas
+  API-->>DataStore: Retrieve Service Area Data
+  DataStore-->>API: List of Service Areas
+  API-->>ExternalApp: List of Service Areas
+
+```
+
+#### 9.8.2 Example: **Emergency Response Routing Scenario**
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-13-125123.png" alt=""><figcaption></figcaption></figure>
+
+```mermaid
+sequenceDiagram
+  participant IncidentReport as Incident Reported
+  participant EDS as Emergency Dispatch System (EDS)
+  participant RoutingAPI as Routing API
+  participant Vehicles as Emergency Vehicles
+  participant NavigationSystem as Navigation Systems
+  participant Personnel as Emergency Personnel
+
+  Note over IncidentReport, EDS: Incident Reported
+  EDS->>RoutingAPI: Request Route to Incident
+  Note over RoutingAPI: CalculateRoute(Destination: [Latitude: 40.7128, Longitude: -74.0060])
+  RoutingAPI->>EDS: Calculated Route
+  EDS->>Vehicles: Dispatch Nearby Vehicles
+  Vehicles->>NavigationSystem: Receive Route
+  Note over Vehicles: Route: [Latitude: 40.7128, Longitude: -74.0060]...
+  loop Enroute
+    Vehicles->>NavigationSystem: Follow Route
+    NavigationSystem-->>Vehicles: Provide Directions
+    Vehicles-->>Vehicles: Real-time Tracking
+    alt Road Closure or Traffic
+      EDS->>RoutingAPI: Request Updated Route
+      Note over RoutingAPI: CalculateRoute(Destination: [Latitude: 40.7128, Longitude: -74.0060])
+      RoutingAPI->>EDS: Updated Route
+      EDS->>Vehicles: Dispatch Updated Route
+    end
+  end
+  Vehicles->>IncidentReport: Arrival at Incident
+  IncidentReport->>Personnel: Respond to Incident
+
+```
