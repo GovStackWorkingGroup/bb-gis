@@ -319,7 +319,7 @@ sequenceDiagram
 
 ```
 
-#### 9.3.2  Example 1: Editing Land Parcel information
+#### 9.3.2  Example: Editing Land Parcel information
 
 <figure><img src=".gitbook/assets/mermaid-diagram-2023-08-12-122454 (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -349,7 +349,7 @@ sequenceDiagram
 
 ```
 
-### 9.4 GeoCoding and Reservse GeoCoding
+### 9.4 GeoCoding and Reverse GeoCoding
 
 #### 9.4.1 Geocoding and Reverse Geocoding API Integration with Data Store
 
@@ -388,7 +388,7 @@ sequenceDiagram
 
 ```
 
-#### 9.4.2 Reverse Geocoding of Incident Dispatcher's Landmark Coordinates
+#### 9.4.2 Example: Reverse Geocoding of Incident Dispatcher's Landmark Coordinates
 
 <figure><img src=".gitbook/assets/mermaid-diagram-2023-08-12-125208.png" alt=""><figcaption></figcaption></figure>
 
@@ -411,3 +411,144 @@ sequenceDiagram
   GeocodingAPI -->> ExternalApp: Response - Reverse Geocoded Address
 
 ```
+
+### 9.5 Spatial Awareness and Analysis
+
+#### 9.5.1 Interactions between an external application or a Building Block and the patialAwarenessAndAnalysis API with data store integration&#x20;
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-13-115538.png" alt=""><figcaption></figcaption></figure>
+
+```mermaid
+sequenceDiagram
+  participant ExternalApp as "External Application"
+  participant SpatialAwarenessAPI as "SpatialAwarenessAndAnalysis API"
+  participant DataStore as "Data Store"
+
+  ExternalApp ->> SpatialAwarenessAPI: Request Metadata
+  SpatialAwarenessAPI ->> DataStore: Retrieve Metadata
+  DataStore -->> SpatialAwarenessAPI: Metadata
+  SpatialAwarenessAPI -->> ExternalApp: Response - Metadata
+
+  ExternalApp ->> SpatialAwarenessAPI: Request Available Processes
+  SpatialAwarenessAPI ->> DataStore: Retrieve Available Processes
+  DataStore -->> SpatialAwarenessAPI: Available Processes
+  SpatialAwarenessAPI -->> ExternalApp: Response - Available Processes
+
+  ExternalApp ->> SpatialAwarenessAPI: Request to Execute Geoprocessing Task
+  SpatialAwarenessAPI ->> DataStore: Execute Geoprocessing Task
+  DataStore -->> SpatialAwarenessAPI: Geoprocessing Task Executed
+  SpatialAwarenessAPI -->> ExternalApp: Response - Geoprocessing Task Executed
+
+  ExternalApp ->> SpatialAwarenessAPI: Request Task Status
+  SpatialAwarenessAPI ->> DataStore: Get Task Status
+  DataStore -->> SpatialAwarenessAPI: Task Status
+  SpatialAwarenessAPI -->> ExternalApp: Response - Task Status
+
+  ExternalApp ->> SpatialAwarenessAPI: Request Task Result
+  SpatialAwarenessAPI ->> DataStore: Get Task Result
+  DataStore -->> SpatialAwarenessAPI: Task Result
+  SpatialAwarenessAPI -->> ExternalApp: Response - Task Result
+
+  ExternalApp ->> SpatialAwarenessAPI: Request to Terminate Task
+  SpatialAwarenessAPI ->> DataStore: Terminate Task
+  DataStore -->> SpatialAwarenessAPI: Task Termination Request
+  SpatialAwarenessAPI -->> ExternalApp: Response - Task Termination Request
+
+```
+
+#### 9.5.2 Example 1: GIS Cadastral User Performing Green Space Analysis
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-13-120921.png" alt=""><figcaption></figcaption></figure>
+
+```mermaid
+sequenceDiagram
+  participant User as "GIS Cadastral User"
+  participant API as "SpatialAwarenessAndAnalysis API"
+  participant DataStore as "Data Store"
+  participant GeoprocessingService as "Geoprocessing Service"
+
+  User ->> API: Request to Get Available Processes
+  API ->> GeoprocessingService: Retrieve Available Processes
+  GeoprocessingService -->> API: Available Processes
+  API -->> User: Response - Available Processes
+
+  note over User, API: GIS Cadastral User reviews available geospatial analysis tasks.
+
+  User ->> API: Request to Execute Geoprocessing Task
+  API ->> GeoprocessingService: Execute Task
+  GeoprocessingService -->> API: Task ID
+  API -->> User: Response - Task ID
+
+  note over User, API: GIS Cadastral User initiates a geospatial analysis task to calculate distances.
+
+  User ->> API: Request to Get Task Status
+  API ->> GeoprocessingService: Get Task Status
+  GeoprocessingService -->> API: Task Status (In Progress)
+  API -->> User: Response - Task Status
+
+  note over User, API: GIS Cadastral User monitors the progress of the analysis.
+
+  User ->> API: Request to Get Task Result
+  API ->> GeoprocessingService: Get Task Result
+  GeoprocessingService -->> API: Task Result (Partial Results)
+  API -->> User: Response - Task Result
+
+  note over User, API: GIS Cadastral User retrieves and reviews partial analysis results.
+
+  User ->> API: Request to Get Task Status
+  API ->> GeoprocessingService: Get Task Status
+  GeoprocessingService -->> API: Task Status (Completed)
+  API -->> User: Response - Task Status
+
+  note over User, API: GIS Cadastral User confirms the completion of the analysis.
+
+  User ->> API: Request to Get Task Result
+  API ->> GeoprocessingService: Get Task Result
+  GeoprocessingService -->> API: Task Result (Final Results)
+  API -->> User: Response - Task Result
+
+  note over User, API: GIS Cadastral User retrieves and reviews final analysis results.
+
+  note over API, DataStore: API communicates with the Data Store to retrieve relevant spatial data.
+  note over API, GeoprocessingService: API interacts with Geoprocessing Service to execute and manage tasks.
+
+```
+
+#### 9.5.3 Example 2: Emergency Dispatcher Creating Safe Zone Buffer Around an Incident Spot
+
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-13-121457.png" alt=""><figcaption></figcaption></figure>
+
+```mermaid
+sequenceDiagram
+  participant Dispatcher as "Emergency Dispatcher"
+  participant API as "SpatialAwarenessAndAnalysis API"
+  participant DataStore as "Data Store"
+  participant GeoprocessingService as "Geoprocessing Service"
+  participant MapDisplayAPI as "MapDisplay API"
+
+  Dispatcher ->> API: Request to Execute Geoprocessing Task
+  API ->> GeoprocessingService: Execute Task
+  GeoprocessingService -->> API: Task ID
+  API -->> Dispatcher: Response - Task ID
+
+  Dispatcher ->> API: Request to Get Task Status
+  API ->> GeoprocessingService: Get Task Status
+  GeoprocessingService -->> API: Task Status (Completed)
+  API -->> Dispatcher: Response - Task Status
+
+  Dispatcher ->> API: Request to Get Task Result
+  API ->> GeoprocessingService: Get Task Result
+  GeoprocessingService -->> API: Task Result (Final Results)
+  API -->> Dispatcher: Response - Task Result
+
+  Dispatcher ->> API: Request to Map Safe Zone
+  API ->> MapDisplayAPI: Map Safe Zone
+  MapDisplayAPI -->> API: Mapping Result
+  API -->> Dispatcher: Response - Mapping Result
+
+  note over API, DataStore: API communicates with the Data Store to retrieve relevant spatial data.
+  note over API, GeoprocessingService: API interacts with Geoprocessing Service to execute and manage tasks.
+  note over API, MapDisplayAPI: API coordinates with MapDisplay API to visualize results.
+
+```
+
