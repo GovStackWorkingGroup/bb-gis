@@ -18,7 +18,7 @@ The following internal workflows describe the processes the GIS Building Block e
 
 #### 9.1.1 Interactions between an external application or a Building Block and the MapDisplay API with data store integration
 
-<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-09-114409.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-14-101924.png" alt=""><figcaption></figcaption></figure>
 
 ```mermaid
 sequenceDiagram
@@ -29,14 +29,13 @@ sequenceDiagram
   ExternalApp->>+MapDisplayAPI: Request Map Display (Details)
   MapDisplayAPI->>+DataStore: Retrieve Data for Display
   DataStore-->>-MapDisplayAPI: Return Data for Display
-  Note over MapDisplayAPI: API prepares map display<br> details based on data viewer<br> type
+  MapDisplayAPI->>MapDisplayAPI: Prepare map display details based on data viewer type
   MapDisplayAPI->>-ExternalApp: Respond with tailored Map Display Details
   ExternalApp->>+MapDisplayAPI: Request Layer Table of Contents
   MapDisplayAPI->>-ExternalApp: Respond with Layer ToC
   ExternalApp->>+MapDisplayAPI: Request Turn On/Off Specific Layer
   MapDisplayAPI->>-ExternalApp: Respond with Layer Status
   ExternalApp->>+MapDisplayAPI: Request Turn On/Off All Layers
-  Note over MapDisplayAPI: Turn on/off specific layer information
   MapDisplayAPI->>-ExternalApp: Respond with All Layers Status
   ExternalApp->>+MapDisplayAPI: Request Add Bookmark
   MapDisplayAPI->>-ExternalApp: Respond with Bookmark Status
@@ -119,9 +118,9 @@ sequenceDiagram
 
 ### 9.2 GIS Query
 
-#### 9.2.1 Interactions between an external application or a Building Block and the GISQuery API with data store integration
+#### 9.2.1 Interactions between an external application or a Building Block and the GISQuery API with data store integrationsequenceDiagram
 
-<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-09-113525.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/mermaid-diagram-2023-08-14-102203.png" alt=""><figcaption></figcaption></figure>
 
 ```mermaid
 sequenceDiagram
@@ -133,32 +132,27 @@ sequenceDiagram
   GISQueryAPI ->> DataStore: Retrieve GIS Layer Metadata
   DataStore -->> GISQueryAPI: Provide GIS Layer Metadata
   GISQueryAPI -->> ExternalApp: Provide GIS Layer Metadata
-  Note over GISQueryAPI: Retrieve metadata for GIS layers and send to External App
 
   ExternalApp ->> GISQueryAPI: Execute GIS Query
   GISQueryAPI ->> DataStore: Execute GIS Query
   DataStore -->> GISQueryAPI: Provide Query Results
   GISQueryAPI -->> ExternalApp: Provide Query Results
-  Note over GISQueryAPI: Execute GIS query and get results
 
   ExternalApp ->> GISQueryAPI: Execute Locational Query
   GISQueryAPI ->> DataStore: Execute Locational Query
   DataStore -->> GISQueryAPI: Provide Query Results
   GISQueryAPI -->> ExternalApp: Provide Query Results
-  Note over GISQueryAPI: Execute locational query and get results
 
   ExternalApp ->> GISQueryAPI: Execute Attribute Query
   GISQueryAPI ->> DataStore: Execute Attribute Query
   DataStore -->> GISQueryAPI: Provide Query Results
   GISQueryAPI -->> ExternalApp: Provide Query Results
-  Note over GISQueryAPI: Execute attribute query and get results
 
   ExternalApp ->> GISQueryAPI: Execute Discovery Query
   GISQueryAPI ->> DataStore: Execute Discovery Query with Keywords
   DataStore -->> GISQueryAPI: Provide Query Results
-  GISQueryAPI -->> ExternalApp: Provide Query Results
-  Note over GISQueryAPI: Execute discovery query with keywords and get results
-
+  GISQueryAPI -->> ExternalApp: Provide Query Results\
+  
 ```
 
 #### 9.2.2  Example 1: Cadastre User Discovery Query for Privately Owned Land
