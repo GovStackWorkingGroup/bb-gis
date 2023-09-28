@@ -14,7 +14,9 @@ Applications or components using geographical information services can collect, 
 
 The GovStack GIS BB specifications are not meant to replace or compete with existing standards in GIS but rather to extend them to address a new niche related to application use cases serving specific sectors. There are several initiatives and entities dedicated to creating standards for geographic data, the most popular of which are: (1) ISO Technical Committee 211 on Geographic Information/Geomatics (ISO/TC 211) which produces the ISO 19xxx standard series, and (2) the Open Geospatial Consortium (OGC). Although these two organizations are independent and sometimes produce overlapping standards, they generally coordinate closely to maximize mutual development and minimize duplication.
 
-ISO standards are generally focused on the nature of geographic information and standards to encode and represent it in digital environments, while OGC standards are more focused on implementation of services and APIs for serving and processing GIS over the internet or across systems.
+ISO standards are generally focused on the nature of geographic information and standards to encode and represent it in digital environments, while OGC standards are more focused on implementation of services and APIs for serving and processing GIS over the internet or across systems. Links to the respective standards and resources can be found in section 10.1 of the GIS BB specifications.
+
+
 
 The GovStack GIS BB specifications were developed to fill a new niche in the GIS standardization landscape. Instead of dealing with each standard in isolation or representing them abstractly, these specifications focus on converging existing standards and aligning them in a useful and applicable way to real-world scenarios or use cases relevant to governments and municipalities.
 
