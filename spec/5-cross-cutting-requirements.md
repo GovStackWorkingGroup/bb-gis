@@ -28,3 +28,11 @@ The Cross-cutting requirements described in this section are an extension (adds 
 
 * Implement effective mechanisms and procedures to handle exceptions and errors.&#x20;
 * Ensure that errors don't lead to system crashes or data loss.
+
+## 5.5 Incorporation of  Relevant Open GIS Standards and APIs (REQUIRED)
+
+* [OGC APIs](https://ogcapi.ogc.org/)
+* [OGC Schemas](https://schemas.opengis.net/)
+* [OGC Service Standards ](https://www.ogc.org/standards/)
+* [GDAL Documentation](https://gdal.org/index.html)
+* [ISO/TC 211 - Geographic information/Geomatics](https://www.iso.org/committee/54904.html)&#x20;
