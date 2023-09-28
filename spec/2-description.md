@@ -58,7 +58,7 @@ These two use cases cover a wide range of GIS services, including core functiona
 
 The following actors have been identified as "users" of the GIS Building Block:
 
-* "**GIS Data Viewer**": displays and views spatial data to find information about a particular location, compare different datasets, or create spatial data visualizations.
+* "**GIS Data Viewer**": displays and views spatial data to find information about a particular location, compare different datasets, or create spatial data visualizations.&#x20;
 * "**GIS Data Editor**": performs spatial data editing by adding, updating, or deleting geographic data features from a dataset or changing the properties and attributes of these features.
 * "**GIS Admin**": manages GIS data by creating, maintaining, and organizing geographic datasets and ensuring that data is accurate and up-to-date.
 * "**GIS Application Developer**": develops GIS applications by deploying one or more GIS BB services to serve business needs.
@@ -67,61 +67,12 @@ The following actors have been identified as "users" of the GIS Building Block:
 
 The GIS BB services MUST enable these actors to perform the basic functions and tasks associated with their role as follows:
 
-**2.1.1. The GIS BB MUST enable GIS Data Viewers to**
-
-* view, explore, and analyze spatial data and interact with a wide range of spatial data (including vector maps, raster imagery, and address coordinates).
-* explore information about a particular location and interact with spatial data in various ways, such as zooming, panning, and selecting features to find information.
-* manipulate layers by adding or turning them on or off for display, or change their symbology on the screen.
-* perform spatial analysis, such as measuring distances between features or calculating areas, and conduct spatial overlay analysis or compare different datasets and identify patterns and trends in the data.
-* generate reports and create spatial information products from displayed data.
-* create visualizations of spatial data in various formats, including maps, charts, and tables, and share and communicate them with others.
-
-**2.1.2. The GIS BB MUST enable GIS Data Editors to**
-
-* add new features to a dataset (e.g. add a new building to a map of a city).
-* delete features from a dataset (e.g. delete the location of a wrongly reported accident from a map).
-* update the attributes of features in a dataset (e.g. update the address of a building).
-* modify features (e.g. correct the river stream on a map).
-* merge/combine two or more datasets into a single dataset (e.g. merge a dataset of water bodies with a dataset of forests to create a single dataset of land cover).
-* divide a dataset into two or more datasets (e.g. split a dataset of buildings into two datasets, one for residential buildings and one for commercial buildings).
-* check the accuracy and completeness of a dataset (e.g. ensure that the roads in a layer are intersecting properly).
-* export a dataset to a file for use in other software applications.
-
-**2.1.3. The GIS BB MUST enable GIS Data Admin to**
-
-* migrate data from one database to another.
-* create new layers, delete existing layers, and manage the properties of layers of standard GIS/CAD/Raster data formats.
-* connect to remote databases and access data from those databases.
-* import data from external sources and export data to external sources.
-* search for data by name, type, path, or keyword tag.
-* transform and convert the projections and georeferenced coordinate systems to common formats.
-* generate metadata automatically or manually.
-* import and export metadata.
-* enforce metadata standards.
-* change and enforce data manipulation policies and integrity constraints.
-* track changes to data and metadata.
-
-**2.1.4. The GIS BB MUST enable GIS Developer to**
-
-* expose capabilities to access GIS databases, GIS layers, and associated attributes.
-* provide access to the contents of databases for data query, extraction, and replication.
-* provide access to the contents of a map, such as the layers and their underlying attributes.
-* develop interoperable applications for the exchange of data and services between different systems that integrate, consume, and/or share geospatial data and services compliant with common standards such as the OGC and ISO 191xx series.
-* create mobile apps that can be used to collect and analyze geospatial data.
-* integrate and communicate with other GIS applications and GIS data sources, such as social media data or weather data.
-
-**2.1.5. The GIS BB MUST enable Discovery Services to**
-
-* catalog geospatial data by providing information about the data, such as its location, format, and metadata.
-* search for geospatial data by using keywords, tags, or other criteria.
-* visualize geospatial data by displaying it on a map or other visualization.
-* provide access to geospatial data by allowing users to download it, use it in their application, or generate a report.
-
-**2.1.6. The GIS BB MUST enable Other Building Blocks and application to**
-
-* retrieve geospatial data used to create interactive maps, geovisualizations, and applications.
-* perform geospatial analysis to make spatially-informed decisions or gain spatial insights (e.g., finding the closest point of interest, calculating the area of a polygon, or identifying the route between two points).
-* manage geospatial data, such as creating, editing, and deleting features in a variety of formats, such as Shapefiles, GeoJSON, and KML.
+* **Enable GIS Data Viewers to** explore, and analyze spatial data, interact with various types of spatial data, manipulate layers, perform spatial analysis, generate reports and create spatial information products, create visualizations in different formats, and share them with others.
+* **Provide capabilities for GIS Data Editors** to add, delete, update, and modify features in a dataset. It should also support merging or dividing datasets, checking accuracy and completeness, and exporting datasets for use in other software applications.
+* **Enable GIS Data Admin** to migrate data between databases, create and manage layers, connect to remote databases, import/export data from external sources, search for data, transform projections, generate and manage metadata, enforce metadata standards, enforce data manipulation policies and integrity constraints, and track changes to data and metadata.
+* **Allow GIS Developers** to expose capabilities for accessing GIS databases, provide access to database contents, access map contents, develop interoperable applications, create mobile apps for geospatial data, and integrate and communicate with other GIS applications and data sources.
+* **Enable Discovery Services** to catalog, search, visualize, and provide access to geospatial data by providing information about the data, using keywords or tags, displaying it on a map, and allowing users to download, use, or generate reports.
+* **Allow other building blocks and applications** to retrieve geospatial data for creating interactive maps and applications, perform geospatial analysis for spatially-informed decisions, and manage geospatial data in various formats.
 
 ## 2.3 Future Scope
 
