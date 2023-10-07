@@ -9,8 +9,8 @@ description: >-
 
 ## 10.1 Use Case Examples
 
-* GIS-Based Incident Management System ([https://govstack-global.atlassian.net/l/cp/jPn05EbR](https://govstack-global.atlassian.net/l/cp/jPn05EbR))
-* Land Records/Cadastre Management ([https://govstack-global.atlassian.net/l/cp/0dcEf3cm](https://govstack-global.atlassian.net/l/cp/0dcEf3cm))
+* [GIS-Based Incident Management System](https://govstack-global.atlassian.net/l/cp/jPn05EbR).
+* [Land Records/Cadastre Management](https://govstack-global.atlassian.net/l/cp/0dcEf3cm).
 
 ## 10.2 Future Considerations
 
