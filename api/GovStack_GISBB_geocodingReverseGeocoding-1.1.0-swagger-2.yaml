@@ -1,0 +1,129 @@
+openapi: 3.1.0
+info:
+  title: Geocoding and Reverse Geocoding API
+  version: 1.0.0
+servers:
+  - url: https://host/{version}/gisBB/geocodingReverseGeocoding
+    variables:
+      version:
+        description: API version
+        default: v1
+paths:
+  /geocode:
+    post:
+      summary: Geocode an Address
+      description: Geocode an address to obtain geographic coordinates.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/addressData'
+      responses:
+        '200':
+          description: Successful response
+        '400':
+          description: Bad Request
+
+  /reverseGeocode:
+    post:
+      summary: Reverse Geocode Coordinates
+      description: Reverse geocode geographic coordinates to obtain an address.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/coordinates'
+      responses:
+        '200':
+          description: Successful response
+        '400':
+          description: Bad Request
+
+  /batchGeocode:
+    post:
+      summary: Batch Geocode
+      description: Perform batch geocoding or reverse geocoding using a table file with multiple addresses or coordinates.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/geocodingBatch'
+      responses:
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+
+  /geocodeResult/{resultId}:
+    get:
+      summary: Retrieve Geocode Result by ID
+      description: Retrieve the geocoding result for a specific ID.
+      parameters:
+        - name: resultId
+          in: path
+          description: ID of the geocoding result to retrieve
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+        '404':
+          description: Not Found
+
+  /reverseGeocodeResult/{resultId}:
+    get:
+      summary: Retrieve Reverse Geocode Result by ID
+      description: Retrieve the reverse geocoding result for a specific ID.
+      parameters:
+        - name: resultId
+          in: path
+          description: ID of the reverse geocoding result to retrieve
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+        '404':
+          description: Not Found
+
+components:
+  schemas:
+    addressData:
+      type: object
+      properties:
+        address:
+          type: string
+        longitude:
+          type: number
+          format: double
+        latitude:
+          type: number
+          format: double
+
+    coordinates:
+      type: object
+      properties:
+        longitude:
+          type: number
+          format: double
+        latitude:
+          type: number
+          format: double
+
+    geocodingBatch:
+      type: object
+      properties:
+        batchType:
+          type: string
+        batchName:
+          type: string
+        status:
+          type: string
+        timeStamp:
+          type: string
+          format: date-time

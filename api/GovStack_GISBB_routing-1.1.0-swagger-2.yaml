@@ -1,0 +1,133 @@
+openapi: 3.1.0
+info:
+  title: Routing API
+  version: 1.0.0
+servers:
+  - url: https://host/{version}/gisBB/routing
+    variables:
+      version:
+        description: API version
+        default: v1
+paths:
+  /routes:
+    post:
+      summary: Create Route
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/route'
+      responses:
+        '201':
+          description: Successful response after creating a route
+
+  /routes/{routeId}:
+    get:
+      summary: Get Route by ID
+      parameters:
+        - name: routeId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response with route details
+        '404':
+          description: Route not found
+    delete:
+      summary: Delete Route
+      parameters:
+        - name: routeId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Successful response after deleting route
+        '404':
+          description: Route not found
+
+  /routes/{routeId}/directions:
+    get:
+      summary: Generate Direction Report for Route
+      parameters:
+        - name: routeId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response with direction report
+        '404':
+          description: Route not found
+
+  /routes/{routeId}/segments:
+    get:
+      summary: List Route Segments
+      parameters:
+        - name: routeId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response with a list of route segments
+        '404':
+          description: Route not found
+
+  /service-areas:
+    get:
+      summary: List Service Areas
+      responses:
+        '200':
+          description: Successful response with a list of service areas
+
+components:
+  schemas:
+    route:
+      type: object
+      properties:
+        startNode:
+          type: object
+        endNode:
+          type: object
+        passThrough:
+          type: boolean
+        restrictions:
+          type: string
+        additionalParameters:
+          type: string
+    routeNode:
+      type: object
+      properties:
+        longitude:
+          type: number
+          format: double
+        latitude:
+          type: number
+          format: double
+        order:
+          type: integer
+    routeSegment:
+      type: object
+      properties:
+        startNode:
+          type: object
+        endNode:
+          type: object
+        length:
+          type: number
+          format: double
+    serviceArea:
+      type: object
+      properties:
+        shape:
+          type: string
+        size:
+          type: number
+          format: double

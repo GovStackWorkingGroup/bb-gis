@@ -1,0 +1,259 @@
+openapi: 3.1.0
+info:
+  title: Geofencing API
+  version: 1.0.0
+servers:
+  - url: https://host/{version}/gisBB/geofencing
+    variables:
+      version:
+        description: API version
+        default: v1
+paths:
+  /geofences:
+    get:
+      summary: List Geofences
+      responses:
+        '200':
+          description: Successful response with a list of geofences
+    post:
+      summary: Create Geofence
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/geofence'
+      responses:
+        '201':
+          description: Successful response after creating geofence
+
+  /geofences/{geofenceId}:
+    get:
+      summary: Get Geofence by ID
+      parameters:
+        - name: geofenceId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response with geofence details
+        '404':
+          description: Geofence not found
+    put:
+      summary: Update Geofence
+      parameters:
+        - name: geofenceId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/geofence'
+      responses:
+        '204':
+          description: Successful response after updating geofence
+        '404':
+          description: Geofence not found
+    delete:
+      summary: Delete Geofence
+      parameters:
+        - name: geofenceId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Successful response after deleting geofence
+        '404':
+          description: Geofence not found
+
+  /geofences/{geofenceId}/status:
+    get:
+      summary: Get Geofence Status
+      parameters:
+        - name: geofenceId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response with geofence status
+        '404':
+          description: Geofence not found
+
+  /geofences/{geofenceId}/activate:
+    post:
+      summary: Activate Geofence
+      parameters:
+        - name: geofenceId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response after activating geofence
+        '404':
+          description: Geofence not found
+
+  /geofences/{geofenceId}/deactivate:
+    post:
+      summary: Deactivate Geofence
+      parameters:
+        - name: geofenceId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response after deactivating geofence
+        '404':
+          description: Geofence not found
+
+  /geofences/{geofenceId}/elements:
+    get:
+      summary: List Geofence Elements
+      parameters:
+        - name: geofenceId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response with a list of geofence elements
+        '404':
+          description: Geofence not found
+    post:
+      summary: Add Geofence Element
+      parameters:
+        - name: geofenceId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/geofenceElement'
+      responses:
+        '201':
+          description: Successful response after adding geofence element
+        '404':
+          description: Geofence not found
+
+  /geofences/{geofenceId}/elements/{elementId}:
+    delete:
+      summary: Remove Geofence Element
+      parameters:
+        - name: geofenceId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: elementId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Successful response after removing geofence element
+        '404':
+          description: Geofence or element not found
+
+  /geofences/{geofenceId}/rules:
+    post:
+      summary: Create Action Rule for Geofence
+      parameters:
+        - name: geofenceId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/actionRule'
+      responses:
+        '201':
+          description: Successful response after creating action rule
+        '404':
+          description: Geofence not found
+
+  /geofences/{geofenceId}/elements/{elementId}/actions:
+    post:
+      summary: Create Element Action Rule for Geofence
+      parameters:
+        - name: geofenceId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: elementId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/geofenceNotification'
+      responses:
+        '201':
+          description: Successful response after creating element action rule
+        '404':
+          description: Geofence or element not found
+
+components:
+  schemas:
+    geofence:
+      type: object
+      properties:
+        name:
+          type: string
+        shape:
+          type: string
+        size:
+          type: number
+          format: double
+        status:
+          type: boolean
+    geofenceElement:
+      type: object
+      properties:
+        elementType:
+          type: string
+        trackingMethod:
+          type: string
+    actionRule:
+      type: object
+      properties:
+        actionType:
+          type: string
+        action:
+          type: string
+    geofenceNotification:
+      type: object
+      properties:
+        notificationType:
+          type: string
+        recipient:
+          type: string
+        recipientType:
+          type: string
