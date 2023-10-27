@@ -16,284 +16,284 @@ The [GovStack non-functional requirements document](https://govstack.gitbook.io/
 
 ### 8.1 Map Display
 
-{% swagger src=".gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml" path="/type" method="get" %}
-[TAREK_3-MapDisplay-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml" path="/type" method="get" %}
+[GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml" path="/details" method="get" %}
-[TAREK_3-MapDisplay-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml" path="/details" method="get" %}
+[GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml" path="/bookmarks" method="post" %}
-[TAREK_3-MapDisplay-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml" path="/bookmarks" method="post" %}
+[GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml" path="/scale" method="put" %}
-[TAREK_3-MapDisplay-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml" path="/scale" method="put" %}
+[GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml" path="/navigation" method="put" %}
-[TAREK_3-MapDisplay-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml" path="/navigation" method="put" %}
+[GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml" path="/notes" method="post" %}
-[TAREK_3-MapDisplay-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml" path="/notes" method="post" %}
+[GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml" path="/measuring" method="post" %}
-[TAREK_3-MapDisplay-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml" path="/measuring" method="post" %}
+[GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml" path="/style" method="get" %}
-[TAREK_3-MapDisplay-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-MapDisplay-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml" path="/style" method="get" %}
+[GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_mapDisplay-1.0.0-swagger-2.yaml)
 {% endswagger %}
 
 ### 8.2 GIS Query&#x20;
 
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml" path="/layer-metadata" method="get" %}
-[TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml" path="/layerMetadata" method="get" %}
+[GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml" path="/non-spatial-table-metadata" method="get" %}
-[TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml" path="/nonSpatialTableMetadata" method="get" %}
+[GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml" path="/gis-query" method="post" %}
-[TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml" path="/gisQuery" method="post" %}
+[GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml" path="/locational-query" method="post" %}
-[TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml" path="/locationalQuery" method="post" %}
+[GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml" path="/attribute-query" method="post" %}
-[TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml" path="/attributeQuery" method="post" %}
+[GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml" path="/discovery-query" method="post" %}
-[TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml" path="/discoveryQuery" method="post" %}
+[GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml" path="/query-result" method="get" %}
-[TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISQuery-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml" path="/queryResult" method="get" %}
+[GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_queryGIS-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
 ### 8.3 GIS Data Management&#x20;
 
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/data-store" method="post" %}
-[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml" path="/dataStore" method="post" %}
+[GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/data-store/{dataStoreId}" method="get" %}
-[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml" path="/dataStore/{dataStoreId}" method="get" %}
+[GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/data-store/{dataStoreId}" method="patch" %}
-[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml" path="/dataStore/{dataStoreId}" method="patch" %}
+[GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/data-store-metadata" method="post" %}
-[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml" path="/dataStoreMetadata" method="post" %}
+[GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/user-control" method="post" %}
-[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml" path="/userControl" method="post" %}
+[GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/editor-tracking" method="post" %}
-[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml" path="/editorTracking" method="post" %}
+[GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/replicate" method="post" %}
-[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml" path="/replicate" method="post" %}
+[GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/extract-transfer" method="post" %}
-[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml" path="/extractTransfer" method="post" %}
+[GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml" path="/edit-feature" method="post" %}
-[TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml](.gitbook/assets/TAREK_3-GovStack_GISBB_GISDataManagement-1.0.0-resolved.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml" path="/editFeature" method="post" %}
+[GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_dataManagement-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
 ### 8.4 Geocoding and Reverse Geocoding
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml" path="/geocode" method="post" %}
-[GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geocodingReverseGeocoding-1.1.0-swagger-2.yaml" path="/geocode" method="post" %}
+[GovStack_GISBB_geocodingReverseGeocoding-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geocodingReverseGeocoding-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml" path="/reverse-geocode" method="post" %}
-[GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geocodingReverseGeocoding-1.1.0-swagger-2.yaml" path="/reverseGeocode" method="post" %}
+[GovStack_GISBB_geocodingReverseGeocoding-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geocodingReverseGeocoding-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml" path="/batch-geocode" method="post" %}
-[GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geocodingReverseGeocoding-1.1.0-swagger-2.yaml" path="/batchGeocode" method="post" %}
+[GovStack_GISBB_geocodingReverseGeocoding-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geocodingReverseGeocoding-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml" path="/geocode-result/{resultId}" method="get" %}
-[GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geocodingReverseGeocoding-1.1.0-swagger-2.yaml" path="/geocodeResult/{resultId}" method="get" %}
+[GovStack_GISBB_geocodingReverseGeocoding-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geocodingReverseGeocoding-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml" path="/reverse-geocode-result/{resultId}" method="get" %}
-[GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geocoding_and_ReverseGeocoding-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geocodingReverseGeocoding-1.1.0-swagger-2.yaml" path="/reverseGeocodeResult/{resultId}" method="get" %}
+[GovStack_GISBB_geocodingReverseGeocoding-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geocodingReverseGeocoding-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
 ### 8.5 Spatial Awareness and Analysis
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml" path="/metadata" method="get" %}
-[GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml" path="/metadata" method="get" %}
+[GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml" path="/processes" method="get" %}
-[GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml" path="/processes" method="get" %}
+[GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml" path="/execute-task" method="post" %}
-[GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml" path="/executeTask" method="post" %}
+[GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml" path="/task-status/{taskId}" method="get" %}
-[GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml" path="/taskStatus/{taskId}" method="get" %}
+[GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml" path="/task-result/{taskId}" method="get" %}
-[GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml" path="/taskResult/{taskId}" method="get" %}
+[GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml" path="/terminate-task/{taskId}" method="post" %}
-[GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_SpatialAnalysis_and_Awareness-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml" path="/terminateTask/{taskId}" method="post" %}
+[GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_spatialAwarenessAnalysisg-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
 ### 8.6 Reporting
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml" path="/templates" method="get" %}
-[GovStack_GISBB_Reporting-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml" path="/templates" method="get" %}
+[GovStack_GISBB_reporting-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml" path="/dynamic-layers" method="post" %}
-[GovStack_GISBB_Reporting-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml" path="/dynamicLayers" method="post" %}
+[GovStack_GISBB_reporting-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml" path="/dynamic-layers/{layerId}" method="delete" %}
-[GovStack_GISBB_Reporting-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml" path="/dynamicLayers/{layerId}" method="delete" %}
+[GovStack_GISBB_reporting-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml" path="/labels" method="post" %}
-[GovStack_GISBB_Reporting-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml" path="/labels" method="post" %}
+[GovStack_GISBB_reporting-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml" path="/labels/{labelId}" method="delete" %}
-[GovStack_GISBB_Reporting-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml" path="/labels/{labelId}" method="delete" %}
+[GovStack_GISBB_reporting-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml" path="/charts" method="post" %}
-[GovStack_GISBB_Reporting-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml" path="/charts" method="post" %}
+[GovStack_GISBB_reporting-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml" path="/charts/{chartId}" method="delete" %}
-[GovStack_GISBB_Reporting-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml" path="/charts/{chartId}" method="delete" %}
+[GovStack_GISBB_reporting-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml" path="/legends" method="post" %}
-[GovStack_GISBB_Reporting-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml" path="/legends" method="post" %}
+[GovStack_GISBB_reporting-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml" path="/legends/{legendId}" method="delete" %}
-[GovStack_GISBB_Reporting-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml" path="/legends/{legendId}" method="delete" %}
+[GovStack_GISBB_reporting-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml" path="/scale-bars" method="post" %}
-[GovStack_GISBB_Reporting-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml" path="/scaleBars" method="post" %}
+[GovStack_GISBB_reporting-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml" path="/scale-bars/{scaleBarId}" method="delete" %}
-[GovStack_GISBB_Reporting-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml" path="/scaleBars/{scaleBarId}" method="delete" %}
+[GovStack_GISBB_reporting-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml" path="/north-arrows" method="post" %}
-[GovStack_GISBB_Reporting-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml" path="/northArrows" method="post" %}
+[GovStack_GISBB_reporting-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml" path="/north-arrows/{northArrowId}" method="delete" %}
-[GovStack_GISBB_Reporting-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Reporting-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml" path="/northArrows/{northArrowId}" method="delete" %}
+[GovStack_GISBB_reporting-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_reporting-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
 ### 8.7 Geofencing
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences" method="get" %}
-[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml" path="/geofences" method="get" %}
+[GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences" method="post" %}
-[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml" path="/geofences" method="post" %}
+[GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}" method="get" %}
-[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml" path="/geofences/{geofenceId}" method="get" %}
+[GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}" method="put" %}
-[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml" path="/geofences/{geofenceId}" method="put" %}
+[GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}" method="delete" %}
-[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml" path="/geofences/{geofenceId}" method="delete" %}
+[GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}/status" method="get" %}
-[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml" path="/geofences/{geofenceId}/status" method="get" %}
+[GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}/activate" method="post" %}
-[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml" path="/geofences/{geofenceId}/activate" method="post" %}
+[GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}/deactivate" method="post" %}
-[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml" path="/geofences/{geofenceId}/deactivate" method="post" %}
+[GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}/elements" method="get" %}
-[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml" path="/geofences/{geofenceId}/elements" method="get" %}
+[GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}/elements" method="post" %}
-[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml" path="/geofences/{geofenceId}/elements" method="post" %}
+[GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}/elements/{elementId}" method="delete" %}
-[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml" path="/geofences/{geofenceId}/elements/{elementId}" method="delete" %}
+[GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}/rules" method="post" %}
-[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml" path="/geofences/{geofenceId}/rules" method="post" %}
+[GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml" path="/geofences/{geofenceId}/elements/{elementId}/actions" method="post" %}
-[GovStack_GISBB_Geofencing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Geofencing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml" path="/geofences/{geofenceId}/elements/{elementId}/actions" method="post" %}
+[GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_geofencing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
 ### 8.8 Routing
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml" path="/routes" method="post" %}
-[GovStack_GISBB_Routing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_routing-1.1.0-swagger-2.yaml" path="/routes" method="post" %}
+[GovStack_GISBB_routing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_routing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml" path="/routes/{routeId}" method="get" %}
-[GovStack_GISBB_Routing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_routing-1.1.0-swagger-2.yaml" path="/routes/{routeId}" method="get" %}
+[GovStack_GISBB_routing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_routing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml" path="/routes/{routeId}" method="delete" %}
-[GovStack_GISBB_Routing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_routing-1.1.0-swagger-2.yaml" path="/routes/{routeId}" method="delete" %}
+[GovStack_GISBB_routing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_routing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml" path="/routes/{routeId}/directions" method="get" %}
-[GovStack_GISBB_Routing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_routing-1.1.0-swagger-2.yaml" path="/routes/{routeId}/directions" method="get" %}
+[GovStack_GISBB_routing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_routing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml" path="/routes/{routeId}/segments" method="get" %}
-[GovStack_GISBB_Routing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_routing-1.1.0-swagger-2.yaml" path="/routes/{routeId}/segments" method="get" %}
+[GovStack_GISBB_routing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_routing-1.1.0-swagger-2.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml" path="/service-areas" method="get" %}
-[GovStack_GISBB_Routing-1.0.0-swagger.yaml](.gitbook/assets/GovStack_GISBB_Routing-1.0.0-swagger.yaml)
+{% swagger src=".gitbook/assets/GovStack_GISBB_routing-1.1.0-swagger-2.yaml" path="/service-areas" method="get" %}
+[GovStack_GISBB_routing-1.1.0-swagger-2.yaml](.gitbook/assets/GovStack_GISBB_routing-1.1.0-swagger-2.yaml)
 {% endswagger %}

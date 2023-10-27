@@ -1,0 +1,213 @@
+openapi: 3.1.0
+info:
+  title: GIS Query API
+  version: 1.0.0
+servers:
+  - url: https://host/{version}/gisBB/query
+    variables:
+      version:
+        description: API version
+        default: v1
+paths:
+  /layerMetadata:
+    get:
+      summary: Retrieve GIS layer metadata
+      description: Retrieve GIS layer metadata and feature type definitions.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - name: Sample Layer
+                  abstract: A sample GIS layer
+                  author: John Doe
+                  geometry: point
+                  keywords: sample, layer
+                  snippet: This is a sample layer.
+                  spatialExtent: [ [0, 0], [1, 1] ]
+                  lastUpdated: '2023-08-08T12:00:00Z'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+  /nonSpatialTableMetadata:
+    get:
+      summary: Retrieve non-spatial table metadata
+      description: Retrieve non-spatial table metadata.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - name: Sample Table
+                  abstract: A sample non-spatial table
+                  author: Jane Smith
+                  keywords: sample, table
+                  lastUpdated: '2023-08-08T12:00:00Z'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+  /gisQuery:
+    post:
+      summary: Execute a GIS Query
+      description: Execute GIS feature or attribute query operations interactively or through predefined expressions.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/gisQuery'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - queryType: Attribute Query
+                  queryStatus: Success
+                  timeStamp: '2023-08-08T12:00:00Z'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal Server Error
+  /locationalQuery:
+    post:
+      summary: Execute a Locational Query
+      description: Execute a spatial query based on location.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/locationalQuery'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - queryType: Locational Query
+                  queryStatus: Success
+                  timeStamp: '2023-08-08T12:00:00Z'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal Server Error
+  /attributeQuery:
+    post:
+      summary: Execute an Attribute Query
+      description: Execute an attribute-based query.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/attributeQuery'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - queryType: Attribute Query
+                  queryStatus: Success
+                  timeStamp: '2023-08-08T12:00:00Z'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal Server Error
+  /discoveryQuery:
+    post:
+      summary: Execute a Discovery Query
+      description: Execute a metadata discovery query.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/discoveryQuery'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - queryType: Metadata Discovery Query
+                  queryStatus: Success
+                  timeStamp: '2023-08-08T12:00:00Z'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal Server Error
+  /queryResult:
+    get:
+      summary: Retrieve Query Results
+      description: Retrieve the results of a previously executed query.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - queryType: Attribute Query
+                  queryStatus: Success
+                  timeStamp: '2023-08-08T12:00:00Z'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal Server Error
+
+components:
+  schemas:
+    gisQuery:
+      type: object
+      properties:
+        type:
+          type: string
+        queryFormat:
+          type: string
+        queryString:
+          type: string
+        timeStamp:
+          type: string
+          format: date-time
+    locationalQuery:
+      type: object
+      properties:
+        layerType:
+          type: string
+        spatialRelation:
+          type: string
+        longitude:
+          type: number
+        latitude:
+          type: number
+        distance:
+          type: number
+    attributeQuery:
+      type: object
+      properties:
+        attributeName:
+          type: string
+        operator:
+          type: string
+        value:
+          type: string
+    discoveryQuery:
+      type: object
+      properties:
+        attributeName:
+          type: string

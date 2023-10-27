@@ -1,0 +1,327 @@
+openapi: 3.1.0
+info:
+  title: GIS Reporting API
+  version: 1.0.0
+servers:
+  - url: https://host/{version}/gisBB/reporting
+    variables:
+      version:
+        description: API version
+        default: v1
+paths:
+  /templates:
+    get:
+      summary: Get Templates
+      description: Retrieve templates and resources for creating map layouts and cartographic reports.
+      responses:
+        '200':
+          description: Successful response with templates
+        '400':
+          description: Bad Request
+
+  /dynamicLayers:
+    post:
+      summary: Add Dynamic GIS Layer
+      description: Add a dynamic GIS layer to a map layout or report.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mapReport'
+      responses:
+        '200':
+          description: Successful response after adding dynamic GIS layer
+        '400':
+          description: Bad Request
+
+  /dynamicLayers/{layerId}:
+    delete:
+      summary: Remove Dynamic GIS Layer
+      description: Remove a dynamic GIS layer from a map layout or report.
+      parameters:
+        - name: layerId
+          in: path
+          description: ID of the dynamic GIS layer to be removed
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response after removing dynamic GIS layer
+        '404':
+          description: Layer not found
+
+  /labels:
+    post:
+      summary: Add Label
+      description: Add a label to a map layout or report.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/label'
+      responses:
+        '200':
+          description: Successful response after adding label
+        '400':
+          description: Bad Request
+
+  /labels/{labelId}:
+    delete:
+      summary: Remove Label
+      description: Remove a label from a map layout or report.
+      parameters:
+        - name: labelId
+          in: path
+          description: ID of the label to be removed
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response after removing label
+        '404':
+          description: Label not found
+
+  /charts:
+    post:
+      summary: Add Chart
+      description: Add a chart to a map layout or report.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/chart'
+      responses:
+        '200':
+          description: Successful response after adding chart
+        '400':
+          description: Bad Request
+
+  /charts/{chartId}:
+    delete:
+      summary: Remove Chart
+      description: Remove a chart from a map layout or report.
+      parameters:
+        - name: chartId
+          in: path
+          description: ID of the chart to be removed
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response after removing chart
+        '404':
+          description: Chart not found
+
+  /legends:
+    post:
+      summary: Add Legend
+      description: Add a legend to a map layout or report.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/legend'
+      responses:
+        '200':
+          description: Successful response after adding legend
+        '400':
+          description: Bad Request
+
+  /legends/{legendId}:
+    delete:
+      summary: Remove Legend
+      description: Remove a legend from a map layout or report.
+      parameters:
+        - name: legendId
+          in: path
+          description: ID of the legend to be removed
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response after removing legend
+        '404':
+          description: Legend not found
+
+  /scaleBars:
+    post:
+      summary: Add Scale Bar
+      description: Add a scale bar to a map layout or report.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/scaleBar'
+      responses:
+        '200':
+          description: Successful response after adding scale bar
+        '400':
+          description: Bad Request
+
+  /scaleBars/{scaleBarId}:
+    delete:
+      summary: Remove Scale Bar
+      description: Remove a scale bar from a map layout or report.
+      parameters:
+        - name: scaleBarId
+          in: path
+          description: ID of the scale bar to be removed
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response after removing scale bar
+        '404':
+          description: Scale Bar not found
+
+  /northArrows:
+    post:
+      summary: Add North Arrow
+      description: Add a north arrow to a map layout or report.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/northArrow'
+      responses:
+        '200':
+          description: Successful response after adding north arrow
+        '400':
+          description: Bad Request
+
+  /northArrows/{northArrowId}:
+    delete:
+      summary: Remove North Arrow
+      description: Remove a north arrow from a map layout or report.
+      parameters:
+        - name: northArrowId
+          in: path
+          description: ID of the north arrow to be removed
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response after removing north arrow
+        '404':
+          description: North Arrow not found
+
+components:
+  schemas:
+    mapReport:
+      type: object
+      properties:
+        title:
+          type: string
+        abstract:
+          type: string
+        author:
+          type: string
+        keywords:
+          type: string
+        lastUpdated:
+          type: string
+          format: date-time
+    label:
+      type: object
+      properties:
+        labelText:
+          type: string
+        positionX:
+          type: number
+          format: float
+        positionY:
+          type: number
+          format: float
+        font:
+          type: string
+        size:
+          type: integer
+        color:
+          type: string
+    chart:
+      type: object
+      properties:
+        title:
+          type: string
+        type:
+          type: string
+        data:
+          type: string
+        # other properties for chart
+    legend:
+      type: object
+      properties:
+        labelText:
+          type: string
+        positionX:
+          type: number
+          format: float
+        positionY:
+          type: number
+          format: float
+        font:
+          type: string
+        size:
+          type: integer
+        color:
+          type: string
+    scaleBar:
+      type: object
+      properties:
+        title:
+          type: string
+        style:
+          type: string
+        length:
+          type: number
+          format: float
+        units:
+          type: string
+        positionX:
+          type: number
+          format: float
+        positionY:
+          type: number
+          format: float
+        font:
+          type: string
+        size:
+          type: integer
+        color:
+          type: string
+    northArrow:
+      type: object
+      properties:
+        title:
+          type: string
+        style:
+          type: string
+        length:
+          type: number
+          format: float
+        units:
+          type: string
+        positionX:
+          type: number
+          format: float
+        positionY:
+          type: number
+          format: float
+        font:
+          type: string
+        size:
+          type: integer
+        color:
+          type: string

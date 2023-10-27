@@ -1,0 +1,402 @@
+openapi: 3.1.0
+info:
+  title: GovStack GIS_BB MapDisplay API
+  version: 1.0.0
+  description: The Map Display for the GIS BB specifications is a fully configured GIS data viewing service that retrieves GIS map display details. This endpoint provides access to GIS data through a data viewer, allowing users to view and query geographic or spatial information presented as graphic representations (points, polygons, lines, or raster grids) through thematic GIS layers or attribute tables. The response will include the symbology (pre-defined styles) for each map layer, displayed as a legend alongside a table of contents listing all layers provided by the service.
+
+servers:
+  - url: https://host/{version}/gisBb/mapDisplay
+    variables:
+      version:
+        description: API version
+        default: v1
+
+tags:
+  - name: dataViewerType
+    description: Endpoints related to retrieving the type of the data viewer.
+  - name: mapDisplay
+    description: Endpoints related to retrieving and manipulating the map display.
+  - name: bookmarks
+    description: Endpoints for managing spatial bookmarks in the GIS data viewer.
+  - name: layerScale
+    description: Endpoints for setting scale limits for GIS layers.
+  - name: navigation
+    description: Endpoints for enabling basic navigation capabilities on the GIS data viewer.
+  - name: mapNotes
+    description: Endpoints for adding, viewing, and deleting map notes on the GIS data viewer.
+  - name: measuring
+    description: Endpoints for performing measuring actions on the GIS data viewer.
+  - name: style
+    description: Endpoints for retrieving the style applied to the data viewer.
+
+components:
+  schemas:
+    dataViewerType:
+      type: string
+      enum: [desktop, mobile, web, unknown]
+      default: desktop
+
+    mapDisplay:
+      type: object
+      properties:
+        title:
+          type: string
+          example: Map Display Title
+        description:
+          type: string
+          example: A summary description of the map display purpose and contents.
+        attribution:
+          type: string
+          example: GIS Data Viewer Attribution
+        accessControl:
+          type: boolean
+          example: true
+        endPoint:
+          type: string
+          example: /r1/eGovStack/COM/11222456/SchedulerBB/creg/event/new
+        crs:
+          type: string
+          example: EPSG:4326
+        centerX:
+          type: number
+          format: double
+          example: 12.3456
+        centerY:
+          type: number
+          format: double
+          example: 34.5678
+        boundsMinX:
+          type: number
+          format: double
+          example: 12.3456
+        boundsMinY:
+          type: number
+          format: double
+          example: 34.5678
+        boundsMaxX:
+          type: number
+          format: double
+          example: 12.7890
+        boundsMaxY:
+          type: number
+          format: double
+          example: 34.9012
+
+    layerOrder:
+      type: array
+      items:
+        type: string
+
+    layerToC:
+      type: object
+      properties:
+        visible:
+          type: boolean
+          example: true
+
+    spatialBookmark:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Bookmark A
+        create:
+          type: integer
+          example: 1
+        remove:
+          type: boolean
+          example: true
+        rename:
+          type: boolean
+          example: true
+        zoomTo:
+          type: boolean
+          example: true
+        minX:
+          type: number
+          format: double
+          example: 12.3456
+        minY:
+          type: number
+          format: double
+          example: 34.5678
+        maxX:
+          type: number
+          format: double
+          example: 12.7890
+        maxY:
+          type: number
+          format: double
+          example: 34.9012
+
+    mapNote:
+      type: object
+      properties:
+        creator:
+          type: string
+          example: John Doe
+        content:
+          type: string
+          example: This is a map note.
+        timeStamp:
+          type: string
+          example: 2023-08-01T12:34:56Z
+        add:
+          type: boolean
+          example: true
+        delete:
+          type: boolean
+          example: true
+        view:
+          type: boolean
+          example: true
+        visible:
+          type: boolean
+          example: true
+        x:
+          type: number
+          format: double
+          example: 12.3456
+        y:
+          type: number
+          format: double
+          example: 34.5678
+
+    measuringAction:
+      type: object
+      properties:
+        distance:
+          type: boolean
+          example: true
+        area:
+          type: boolean
+          example: true
+
+    style:
+      type: object
+      properties:
+        name:
+          type: string
+          example: DefaultStyle
+        description:
+          type: string
+          example: Default style for GIS layers
+        type:
+          type: string
+          example: CodedStyle
+
+paths:
+  /type:
+    get:
+      tags:
+        - dataViewerType
+      summary: Retrieve the data viewer type
+      description: Retrieve the type of the data viewer. This endpoint provides information about whether the client data viewer is desktop, mobile, web browser, or unknown.
+      parameters:
+        - name: supportedBrowser
+          in: query
+          description: Specifies the type of supported browser for the data viewer.
+          required: false
+          schema:
+            $ref: '#/components/schemas/dataViewerType'
+      responses:
+        '200':
+          description: Successful retrieval of the data viewer type
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/dataViewerType'
+          examples:
+            typeExample:
+              value: desktop
+        '404':
+          description: The data viewer type information could not be found
+
+  /details:
+    get:
+      tags:
+        - mapDisplay
+      summary: Retrieve GIS map display details
+      description: Retrieve GIS map display details. This endpoint provides access to GIS data through a data viewer, allowing users to view and query geographic or spatial information presented as graphic representations (points, polygons, lines, or raster grids) through thematic GIS layers or attribute tables. The response will include the symbology (pre-defined styles) for each map layer, displayed as a legend alongside a table of contents listing all layers provided by the service.
+      responses:
+        '200':
+          description: Successful retrieval of GIS map display details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mapDisplay'
+          examples:
+            mapDisplayExample:
+              value:
+                title: Map Display Title
+                description: A summary description of the map display purpose and contents.
+                attribution: GIS Data Viewer Attribution
+                accessControl: true
+                endPoint: /r1/eGovStack/COM/11222456/SchedulerBB/creg/event/new
+                crs: EPSG:4326
+                centerX: 12.3456
+                centerY: 34.5678
+                boundsMinX: 12.3456
+                boundsMinY: 34.5678
+                boundsMaxX: 12.7890
+                boundsMaxY: 34.9012
+        '404':
+          description: Map display details not found
+
+  /bookmarks:
+    post:
+      tags:
+        - bookmarks
+      summary: Add or update spatial bookmarks
+      description: Add or update spatial bookmarks. This endpoint allows users to capture the spatial extent of a given location as a spatial bookmark in a GIS data viewer. Users can name the bookmark and zoom to the exact extent whenever needed by selecting the bookmark's name. Users can also add, rename, and remove spatial bookmarks as necessary.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/spatialBookmark'
+      responses:
+        '200':
+          description: Successful bookmark creation or update
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/spatialBookmark'
+          examples:
+            bookmarkExample:
+              value:
+                name: Bookmark A
+                create: 1
+                remove: true
+                rename: true
+                zoomTo: true
+                minX: 12.3456
+                minY: 34.5678
+                maxX: 12.7890
+                maxY: 34.9012
+        '400':
+          description: Invalid request parameters or missing required fields
+
+  /scale:
+    put:
+      tags:
+        - layerScale
+      summary: Set minimum and maximum scale limits for each layer
+      description: Set minimum and maximum scale limits for each layer. This endpoint allows users to specify whether a layer is identifiable and/or selectable on the data viewer. These settings are saved as a cache by the data viewer app and are reserved for future data viewer displays. The settings are reset to default when the cache is cleared.
+      parameters:
+        - name: layerTitle
+          in: query
+          description: The name of the GIS layer
+          required: true
+          schema:
+            type: string
+        - name: minScale
+          in: query
+          description: The minimum scale to show the layer's feature on the map display
+          schema:
+            type: integer
+        - name: maxScale
+          in: query
+          description: The maximum scale to show the layer's feature on the map display
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Successful setting of layer scale limits
+        '400':
+          description: Invalid request parameters or missing required fields
+
+  /navigation:
+    put:
+      tags:
+        - navigation
+      summary: Enable basic navigation capabilities on the GIS data viewer
+      description: Enable basic navigation capabilities on the GIS data viewer. This endpoint allows users to perform basic navigation actions such as zooming in and out of a map, and panning to explore the displayed GIS data.
+      parameters:
+        - name: zoom
+          in: query
+          description: Specifies if zooming is supported
+          required: true
+          schema:
+            type: boolean
+        - name: zoomLevel
+          in: query
+          description: The available zoom levels for the map
+          required: true
+          schema:
+            type: integer
+        - name: pan
+          in: query
+          description: Specifies if panning is supported
+          required: true
+          schema:
+            type: boolean
+      responses:
+        '204':
+          description: Successful enabling of basic navigation capabilities
+        '400':
+          description: Invalid request parameters or missing required fields
+
+  /notes:
+    post:
+      tags:
+        - mapNotes
+      summary: Add, view, delete, and mark map notes on the GIS data viewer
+      description: Add, view, delete, and mark map notes on the GIS data viewer. This endpoint allows GIS users to add and share brief notes on the GIS data viewer. Other users can view and comment on these notes. Notes can only be deleted by the creator of the note. Notes are saved and served as a web feature service.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mapNote'
+      responses:
+        '200':
+          description: Successful note creation or update
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mapNote'
+          examples:
+            noteExample:
+              value:
+                noteID: abc123
+        '400':
+          description: Invalid request parameters or missing required fields
+
+  /measuring:
+    post:
+      tags:
+        - measuring
+      summary: Perform measuring actions on the GIS data viewer
+      description: Perform measuring actions on the GIS data viewer. This endpoint allows users to measure distances and areas on the displayed map.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/measuringAction'
+      responses:
+        '204':
+          description: Successful measuring action
+        '400':
+          description: Invalid request parameters or missing required fields
+
+  /style:
+    get:
+      tags:
+        - style
+      summary: Retrieve the style applied to the data viewer
+      description: Retrieve the style applied to the data viewer. This endpoint provides information about the style used to portray the geographic features of each layer on the data viewer.
+      responses:
+        '200':
+          description: Successful retrieval of data viewer style
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/style'
+          examples:
+            styleExample:
+              value:
+                name: DefaultStyle
+                description: Default style for GIS layers
+                type: Coded
