@@ -16,13 +16,9 @@ The GovStack GIS BB specifications are not meant to replace or compete with exis
 
 ISO standards are generally focused on the nature of geographic information and standards to encode and represent it in digital environments, while OGC standards are more focused on the implementation of services and APIs for serving and processing GIS over the internet or across systems. Links to the respective standards and resources that are incorporated in the GIS BB can be found in section 5.5 of the GIS BB specifications.
 
-
-
 The GovStack GIS BB specifications were developed to fill a new niche in the GIS standardization landscape. Instead of dealing with each standard in isolation or representing them abstractly, these specifications focus on converging existing standards and aligning them in a useful and applicable way to real-world scenarios or use cases relevant to governments and municipalities.
 
-&#x20;
-
-<figure><img src=".gitbook/assets/image (1) (1) (1).png" alt="" width="375"><figcaption><p>Relation to main standards in the Geospatial Information Domain</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (7).png" alt="" width="375"><figcaption><p>Relation to main standards in the Geospatial Information Domain</p></figcaption></figure>
 
 Specifically, the GovStack GIS BB specifications aim to:
 
@@ -58,7 +54,7 @@ These two use cases cover a wide range of GIS services, including core functiona
 
 The following actors have been identified as "users" of the GIS Building Block:
 
-* "**GIS Data Viewer**": displays and views spatial data to find information about a particular location, compare different datasets, or create spatial data visualizations.&#x20;
+* "**GIS Data Viewer**": displays and views spatial data to find information about a particular location, compare different datasets, or create spatial data visualizations.
 * "**GIS Data Editor**": performs spatial data editing by adding, updating, or deleting geographic data features from a dataset or changing the properties and attributes of these features.
 * "**GIS Admin**": manages GIS data by creating, maintaining, and organizing geographic datasets and ensuring that data is accurate and up-to-date.
 * "**GIS Application Developer**": develops GIS applications by deploying one or more GIS BB services to serve business needs.
